@@ -5,9 +5,9 @@ let Event = require(path + 'Event');
 
 exports.createEvent = function (eventName, location, date) {
     const event = new Event({
-        eventName,
-        location,
-        date
+        eventName: eventName,
+        location: location,
+        date: date
     });
     return event.save();
 };
