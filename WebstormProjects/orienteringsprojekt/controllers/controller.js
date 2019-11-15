@@ -11,3 +11,7 @@ exports.createEvent = function (eventName, location, date) {
     });
     return event.save();
 };
+
+exports.getEvents = function() {
+    return Event.find().exec();
+};
