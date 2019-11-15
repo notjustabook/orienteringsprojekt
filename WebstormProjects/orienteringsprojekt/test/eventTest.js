@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const describe = require("mocha");
+const mocha = require("mocha");
 const controller = require('../controllers/controller');
 
 
