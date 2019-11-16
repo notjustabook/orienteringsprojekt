@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>
 </head>
 <body>
-
+    <div id="login">
+        <div id="usernameGrid" class="grids">
+            <label >Username</label>
+            <input id="input-username">
+        </div>
+        <div id="passwordGrid" class="grids">
+            <label>Password</label>
+            <input id="input-password" type="password">
+        </div>
+        <div id="buttonGrid" class="grids">
+            <label id="errorLabel"></label>
+            <button id="btnLogin">Login</button>
+        </div>
+    </div>
 </body>
 </html>
