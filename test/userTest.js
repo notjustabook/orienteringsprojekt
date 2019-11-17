@@ -3,25 +3,28 @@ const should = require('should');
 let path = '../models/';
 let user = require(path + 'User');
 let controller = require('../controllers/controller');
+let mongoose = require('./connection');
+
+beforeEach(async function() {
+    //Clear database before testing!
+    await user.deleteMany({});
+});
 
 describe('unitTest', () => {
+
     it('Create user', async function() {
         //Create user and save to database
-        let name = 'Jimmy John';
-        let userName = 'JJ2020';
-        let password = 'jim1234';
+        let name = 'Niels John';
+        let userName = 'NJ2020';
+        let password = 'niels1234';
         await controller.createUser(name, userName, password);
 
         //Get user from database
-        let testUser = await controller.getUser('JJ2020');
+        let testUser = await controller.getUser(userName);
 
         //Verify that data has been saved correctly
         testUser.name.should.be.equal(name);
         testUser.userName.should.be.equal(userName);
-        testUser.userName.should.be.equal(password);
-
-        //Clean up database afterwards
-        await user.deleteOne({userName: userName});
+        testUser.password.should.be.equal(password);
     });
-
 });

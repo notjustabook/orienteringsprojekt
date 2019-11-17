@@ -2,6 +2,7 @@
 
 let path = '../models/';
 let Event = require(path + 'Event');
+let User = require(path + 'User');
 
 exports.createEvent = function (eventName, location, date) {
     const event = new Event({
@@ -17,9 +18,15 @@ exports.getEvents = function() {
 };
 
 exports.createUser = function(name, userName, password) {
-
+    const user = new User({
+        name: name,
+        userName: userName,
+        password: password,
+        salt: 'salty'
+    });
+    return user.save();
 };
 
 exports.getUser = function(userName) {
-
+    return User.findOne({userName: userName}).exec();
 };
