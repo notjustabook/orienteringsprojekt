@@ -15,3 +15,5 @@ describe('Ride test', function() {
         assert(ride.isNew === false);
     });
 });
+
+
