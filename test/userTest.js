@@ -21,9 +21,12 @@ describe('unitTest', () => {
         //Get user from database
         let testUser = await controller.getUser(userName);
 
+        //Checking if the password matches
+        let passwordMatches = await testUser.comparePasswords(password);
+
         //Verify that data has been saved correctly
         testUser.name.should.be.equal(name);
         testUser.userName.should.be.equal(userName);
-        testUser.password.should.be.equal(password);
+        passwordMatches.should.be.true();
     });
 });
