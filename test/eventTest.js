@@ -1,7 +1,7 @@
 const mocha = require("mocha");
 
 // Describes test
-describe('Event test', async function () {
+describe('Event test',  function () {
     const event = await Event.findOne({
         eventName: 'eventName-test',
         location: 'location-test',

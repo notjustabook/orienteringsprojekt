@@ -19,7 +19,7 @@ login.onclick = async () => {
     try {
         const response = await POST("/login", {userName: username.value, password: password.value});
         if (response.ok) {
-            window.location.href = "/session";
+            window.location.href = "/ride";
         }
         else {
             password.value = "";
