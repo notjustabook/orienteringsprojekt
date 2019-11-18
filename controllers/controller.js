@@ -3,6 +3,8 @@
 let path = '../models/';
 let Event = require(path + 'Event');
 let User = require(path + 'User');
+let bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 exports.createEvent = function (eventName, location, date) {
     const event = new Event({
@@ -18,13 +20,14 @@ exports.getEvents = function() {
 };
 
 exports.createUser = function(name, userName, password) {
-    const user = new User({
-        name: name,
-        userName: userName,
-        password: password,
-        salt: 'salty'
+    bcrypt.hash(password, saltRounds, function (err, hash) {
+        const user = new User({
+            name: name,
+            userName: userName,
+            password: hash,
+        });
+        return user.save();
     });
-    return user.save();
 };
 
 exports.getUser = function(userName) {
