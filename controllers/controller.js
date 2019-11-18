@@ -31,10 +31,14 @@ exports.createUser = function(name, userName, password) {
 };
 
 exports.getUser = function(userName) {
-    return User.findOne({userName: userName}).exec();
+    console.log(User.findOne({userName: userName}).exec());
 };
 exports.login = function(username,password) {
     const user = getUser(username);
-    if(user)
-    return user.password === Hash(password + user.salt);
+    console.log(user);
+    if(!user)
+        return user;
+    bcrypt.compare(password, user.password, function (err, result) {
+       return result;
+    });
 };
