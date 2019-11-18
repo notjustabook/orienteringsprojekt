@@ -18,3 +18,5 @@ app.post('/login', async (request, response) => {
     }
 });
 
+const userRoute = require('./routes/userRoute');
+app.use('/createUser', userRoute);

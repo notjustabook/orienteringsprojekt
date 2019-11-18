@@ -21,12 +21,12 @@ exports.getEvents = function() {
 };
 
 exports.createUser = function (name, userName, password) {
-        const user = new User({
-            name: name,
-            userName: userName,
-            password: password,
-        });
-        return user.save();
+    const user = new User({
+        name: name,
+        userName: userName,
+        password: password,
+    });
+    return user.save();
 };
 
 exports.getUser = function(userName) {
