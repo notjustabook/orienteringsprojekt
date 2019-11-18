@@ -19,8 +19,8 @@ exports.getEvents = function() {
     return Event.find().exec();
 };
 
-exports.createUser = function(name, userName, password) {
-    bcrypt.hash(password, saltRounds, function (err, hash) {
+exports.createUser = function (name, userName, password) {
+    return bcrypt.hash(password, saltRounds, function (err, hash) {
         const user = new User({
             name: name,
             userName: userName,

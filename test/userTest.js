@@ -11,7 +11,6 @@ beforeEach(async function() {
 });
 
 describe('unitTest', () => {
-
     it('Create user', async function() {
         //Create user and save to database
         let name = 'Niels John';
