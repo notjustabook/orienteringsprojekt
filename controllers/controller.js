@@ -4,6 +4,7 @@ let path = '../models/';
 let Event = require(path + 'Event');
 let User = require(path + 'User');
 let Ride = require(path + 'Ride');
+
 exports.createEvent = function (eventName, location, date) {
     const event = new Event({
         eventName: eventName,
@@ -11,6 +12,7 @@ exports.createEvent = function (eventName, location, date) {
         date: date
     });
     return event.save();
+    return event;
 };
 
 exports.getEvents = function() {
