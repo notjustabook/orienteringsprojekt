@@ -33,3 +33,8 @@ exports.createUser = function(name, userName, password) {
 exports.getUser = function(userName) {
     return User.findOne({userName: userName}).exec();
 };
+exports.login = function(username,password) {
+    const user = getUser(username);
+    if(user)
+    return user.password === Hash(password + user.salt);
+};

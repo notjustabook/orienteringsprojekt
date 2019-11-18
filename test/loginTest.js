@@ -1,18 +1,19 @@
 const mocha = require('mocha');
 const assert = require('assert');
 const User = require('../models/User');
-const hash = require('../');
+const controller = require('../controllers/controller');
+
 
 //Describes test
 describe('Login test', function() {
-    it('Finds a user from the database', async function() {
-        const user = await User.findOne({userName: 'username-test'});
-        assert(user.userName === 'username-test');
+    const user = controller.createUser('nameTest','usernameTest','passwordTest');
+    it('Tests with correct information', async function() {
+        assert(controller.login('usernameTest','passwordTest'));
     });
-    it('Finds a user from the database', async function() {
-        const user = await User.findOne({userName: 'username-test'});
-        const password = user.pass;
-        const salt = user.salt;
-        assert(password === hash('password-test' + salt));
+    it('Tests with wrong username', async function() {
+        assert(!controller.login('username','passwordTest'));
+    });
+    it('Tests with correct information', async function() {
+        assert(!controller.login('usernameTest','123'));
     });
 });
