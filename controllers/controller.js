@@ -3,9 +3,9 @@
 let path = '../models/';
 let Event = require(path + 'Event');
 let User = require(path + 'User');
+let Ride = require(path + 'Ride');
 let bcrypt = require('bcrypt');
 const saltRounds = 10;
-
 exports.createEvent = function (eventName, location, date) {
     const event = new Event({
         eventName: eventName,
@@ -31,7 +31,7 @@ exports.createUser = function(name, userName, password) {
 };
 
 exports.getUser = function(userName) {
-    console.log(User.findOne({userName: userName}).exec());
+    return User.findOne({userName: userName}).exec();
 };
 exports.login = function(username,password) {
     const user = getUser(username);
@@ -41,4 +41,22 @@ exports.login = function(username,password) {
     bcrypt.compare(password, user.password, function (err, result) {
        return result;
     });
+};
+
+exports.createRide = function(pickUpPoint, numberOfPassengers) {
+    const ride = new Ride({
+        pickUpPoint: pickUpPoint,
+        numberOfPassengers: numberOfPassengers,
+        count: 0
+    });
+    ride.save();
+    return ride;
+};
+
+exports.getRide = async function(pickUpPoint) {
+    return await Ride.findOne({pickUpPoint: pickUpPoint}).exec();
+}
+
+exports.getRides = function() {
+    return Ride.find().exec;
 };
