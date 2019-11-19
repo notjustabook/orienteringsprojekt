@@ -4,8 +4,6 @@ let path = '../models/';
 let Event = require(path + 'Event');
 let User = require(path + 'User');
 let Ride = require(path + 'Ride');
-let bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 exports.createEvent = function (eventName, location, date) {
     const event = new Event({
@@ -13,11 +11,16 @@ exports.createEvent = function (eventName, location, date) {
         location: location,
         date: date
     });
-    return event.save();
+    event.save();
+    return event;
 };
 
 exports.getEvents = function() {
     return Event.find().exec();
+};
+
+exports.getEvent = function(eventName) {
+    return Event.findOne({'eventName': eventName}).exec();
 };
 
 exports.createUser = function (name, userName, password) {
