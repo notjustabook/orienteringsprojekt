@@ -6,14 +6,23 @@ const controller = require('../controllers/controller');
 
 //Describes test
 describe('Login test', function() {
-    const user = controller.createUser('nameTest','usernameTest','passwordTest');
+    controller.createUser('nameTest','usernameTest','passwordTest');
+
     it('Tests with correct information', async function() {
-        assert(controller.login('usernameTest','passwordTest'));
+        this.timeout(5000);
+        const login = controller.login('usernameTest','passwordTest');
+        assert(login);
     });
+
     it('Tests with wrong username', async function() {
-        assert(!controller.login('username','passwordTest'));
+        this.timeout(5000);
+        const login = await controller.login('username','passwordTest');
+        assert(login ==='Incorrect username');
     });
-    it('Tests with correct information', async function() {
-        assert(!controller.login('usernameTest','123'));
+
+    it('Tests with wrong password',async function() {
+        this.timeout(5000);
+        const login = await controller.login('usernameTest','123');
+        assert(login === 'Incorrect password');
     });
 });

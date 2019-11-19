@@ -5,10 +5,7 @@ let user = require(path + 'User');
 let controller = require('../controllers/controller');
 let mongoose = require('./connection');
 
-beforeEach(async function() {
-    //Clear database before testing!
-    await user.deleteMany({});
-});
+
 
 describe('unitTest', () => {
     it('Create user', async function() {
@@ -20,7 +17,6 @@ describe('unitTest', () => {
 
         //Get user from database
         let testUser = await controller.getUser(userName);
-
         //Checking if the password matches
         let passwordMatches = await testUser.comparePasswords(password);
 
