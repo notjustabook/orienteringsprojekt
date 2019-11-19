@@ -10,6 +10,7 @@ let mongoose = require('./connection');
   //  await user.deleteMany({});
 //});
 
+
 describe('unitTest', () => {
     it('Create user', async function() {
         //Create user and save to database
@@ -20,7 +21,6 @@ describe('unitTest', () => {
 
         //Get user from database
         let testUser = await controller.getUser(userName);
-
         //Checking if the password matches
         let passwordMatches = await testUser.comparePasswords(password);
 
