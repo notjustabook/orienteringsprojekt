@@ -2,8 +2,14 @@ const expect = require('chai').expect;
 const Reg = require('../models/Registration');
 const user = require('../models/User');
 const ride = require('../models/Ride');
+let controller = require('../controllers/controller');
 
-Describe('Registration', async () => {
+describe('Registration', async () => {
+    let username = await controller.getUser('morten').ge
+
+});
+
+describe('Registration', async () => {
     const ride01 = new ride();
     const user01 = new user();
     const Result = new Registration(1, user01, ride01 )
