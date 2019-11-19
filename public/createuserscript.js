@@ -1,7 +1,7 @@
 const nameField = document.querySelector('.name');
 const userNameField = document.querySelector('.name');
 const passwordField = document.querySelector('.name');
-const succesBox = document.querySelector('.successbox');
+const successBox = document.querySelector('.successbox');
 
 document.querySelector('.btncreate').onclick = async () => {
     try {
@@ -10,15 +10,16 @@ document.querySelector('.btncreate').onclick = async () => {
             userName: userNameField.value,
             password: passwordField.value
         });
-        succesBox.innerHTML = 'Bruger med navn ' + nameField.value + ' er oprettet';
+        successBox.innerHTML = 'Bruger med navn ' + nameField.value + ' er oprettet';
     } catch (err) {
-        succesBox.innerHTML = 'Noget gik galt.';
+        successBox.innerHTML = 'Noget gik galt.';
+        console.log(err);
     }
 };
 
 async function POST(url, data) {
     const OK = 200;
-    let response = await POST(url, {
+    let response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {'Content-Type': 'application/json'}
