@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-//const User = require('../models/User');
-//const Hash = require('../');
-const controller = require('../orienteringsprojekt/controllers/controller');
+const User = require('../models/User');
+const Hash = require('../');
 
 app.use(express.json());
 app.use(express.static('public'));
