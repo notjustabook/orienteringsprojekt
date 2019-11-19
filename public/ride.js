@@ -15,7 +15,7 @@ async function createRide() {
     try {
         const pickUpPointField = document.getElementById('pickUpPoint');
         const numberOfPassengersField = document.getElementById('numberOfPassengers');
-        await POST('/', {pickUpPoint: pickUpPointField.value, numberOfPassengers: numberOfPassengersField.value});
+        await POST('/ride', {pickUpPoint: pickUpPointField.value, numberOfPassengers: numberOfPassengersField.value});
     } catch (err) {
         console.log("Mistakes.." + err);
     };
