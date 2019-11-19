@@ -34,5 +34,6 @@ app.post('/ride', async function(req, res) {
     let ride = await controller.createRide(req.body.pickUpPoint, req.body.numberOfPassengers);
     console.log("ride created" + ride);
 });
+
 app.listen(10000);
 console.log('listening on port 10000');
