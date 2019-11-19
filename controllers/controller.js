@@ -15,11 +15,16 @@ exports.createEvent = function (eventName, location, date) {
         location: location,
         date: date
     });
-    return event.save();
+    event.save();
+    return event;
 };
 
 exports.getEvents = function() {
     return Event.find().exec();
+};
+
+exports.getEvent = function(eventName) {
+    return Event.findOne({'eventName': eventName}).exec();
 };
 
 exports.createUser = function (name, userName, password) {
