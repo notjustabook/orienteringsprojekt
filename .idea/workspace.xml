@@ -3,8 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/userTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/userTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/ISSUE_TEMPLATE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/bcrypt.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/bcrypt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/binding.gyp" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/binding.gyp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/examples/async_compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/examples/async_compare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/examples/forever_gen_salt.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/examples/forever_gen_salt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/promises.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/promises.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/src/bcrypt.cc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/src/bcrypt.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/src/bcrypt_node.cc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/src/bcrypt_node.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/src/blowfish.cc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/src/blowfish.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/src/node_blf.h" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/src/node_blf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/test/async.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/test/async.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/test/implementation.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/test/implementation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/test/promise.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/test/promise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/test/repetitions.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/test/repetitions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/test/sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/test/sync.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574067111834</updated>
-      <workItem from="1574067113089" duration="14553000" />
+      <workItem from="1574067113089" duration="15366000" />
     </task>
     <task id="LOCAL-00001" summary="Ride module/test/gui">
       <created>1574068497772</created>
