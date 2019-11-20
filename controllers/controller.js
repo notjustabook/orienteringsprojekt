@@ -3,6 +3,8 @@
 let path = '../models/';
 let Event = require(path + 'Event');
 let User = require(path + 'User');
+let Ride = require(path + 'Ride');
+let Registration = require(path + 'Registration');
 let bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -19,22 +21,45 @@ exports.getEvents = function() {
     return Event.find().exec();
 };
 
-exports.createUser = function(name, userName, password) {
-    bcrypt.hash(password, saltRounds, function (err, hash) {
+exports.createUser = function (name, userName, password) {
         const user = new User({
             name: name,
             userName: userName,
-            password: hash,
+            password: password,
         });
         return user.save();
-    });
 };
 
 exports.getUser = function(userName) {
-    return User.findOne({userName: userName}).exec();
+    return User.findOne({'userName': userName}).exec();
+
 };
+
 exports.login = function(username,password) {
     const user = getUser(username);
     if(user)
     return user.password === Hash(password + user.salt);
 };
+
+exports.createRide = function(pickUpPoint, numberOfPassengers) {
+    const ride = new Ride({
+        pickUpPoint: pickUpPoint,
+        numberOfPassengers: numberOfPassengers,
+        count: 0
+    });
+    ride.save();
+    return ride;
+};
+
+exports.getRide = async function(pickUpPoint) {
+    return await Ride.findOne({pickUpPoint: pickUpPoint}).exec();
+};
+
+exports.getRides = function() {
+    return Ride.find().exec;
+};
+
+exports.getRegistration = function(){
+    return Registration.find().exec;
+}
+

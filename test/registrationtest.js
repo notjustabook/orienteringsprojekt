@@ -1,28 +1,25 @@
 const expect = require('chai').expect;
 const Reg = require('../models/Registration');
-const user = require('../models/User');
-const ride = require('../models/Ride');
 let controller = require('../controllers/controller');
 
+// this test requires a user and a user with a ride.
 describe('Registration', async () => {
-    let username = await controller.getUser('morten').ge
+   //Create user and save to database
+   let name = 'John Nielsen';
+   let userName = 'JN1944';
+   let password = 'John1234';
+   await controller.createUser(name, userName, password);
+
+   //create user and save to DB, then Create a ride associated with this user.
+   let name = 'Ride Holdenson';
+   let userName = 'xRHx';
+   let password = 'xxxxxx';
+   await controller.createUser(name, userName, password);
+
+   //^creating ride
+   let pPoint = 'pick up here!';
+   let noOfSeats = 5;
+   await controller.createRide( )
 
 });
 
-describe('Registration', async () => {
-    const ride01 = new ride();
-    const user01 = new user();
-    const Result = new Registration(1, user01, ride01 )
-    it('noOfSeats should be a whole number', () => {
-        expect(result.getNoOfSeats).to.be.a('number');
-        expect(result.getNoOfSeats).to.be.above(0);
-        // tester om det er et heltal(whole number).
-        expect(reuslt.getNoOfSeats % 1).to.equal(0);
-    })
-
-    it('Should have user and ride property, and they may not be null', async () => {
-        expect(result).to.have.keys(['ride', 'user']);
-        expect(result.getUser).to.not.be.null;
-        expect(result.getRide).to.not.be.null;
-    })
-});
