@@ -15,12 +15,7 @@
     "express-session": "^1.17.0",
     "mongoose": "^5.7.11",
     "should": "^13.2.3",
-<<<<<<< HEAD
     "mocha": "^6.2.2"
-=======
-    "mocha": "^6.2.2",
-    "moment": "^2.24.0"
->>>>>>> fa6d3e8590669d5a356f30307c5eb940fc457dc0
   },
   "devDependencies": {
     "assert": "^2.0.0",
