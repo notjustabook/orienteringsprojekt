@@ -5,6 +5,10 @@ let user = require(path + 'User');
 let controller = require('../controllers/controller');
 let mongoose = require('./connection');
 
+//beforeEach(async function() {
+    //Clear database before testing!
+  //  await user.deleteMany({});
+//});
 
 
 describe('unitTest', () => {
