@@ -4,18 +4,23 @@
     background-color: darkgrey;
     padding: 10px;
     width: 20%;
-    height: 35px;
+    height: 55px;
     float: right;
 }
-.login{
-    margin-right: 5px;
+#login{
+    margin-right: 0px;
 }
-#btnLogin{
-    alignment: center;
+.btnLogin{
+    height: 15px;
+    alignment: bottom;
+
 }
 body{
     margin: 0px;
     background: #DCDCDC;
+}
+input{
+
 }
 
 .grids{
@@ -26,4 +31,6 @@ body{
 }
 label{
     alignment: center;
+    height: 4px;
+    font-size: 15px;
 }

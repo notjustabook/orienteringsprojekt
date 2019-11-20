@@ -2,10 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Samkørselssystem</title>
-    <script src="ride.js" defer></script>
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
-<p>index html</p>
+    <div id="login">
+        <div id="usernameGrid" class="grids">
+            <label >Username</label>
+            <input id="input-username">
+        </div>
+        <div id="passwordGrid" class="grids">
+            <label>Password</label>
+            <input id="input-password" type="password">
+        </div>
+        <div id="buttonGrid" class="grids">
+            <label id="errorLabel"></label>
+            <button id="btnLogin">Login</button>
+        </div>
+    </div>
 </body>
 </html>

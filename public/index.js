@@ -1,6 +1,6 @@
 const username = document.querySelector('#input-username');
 const password = document.querySelector('#input-password');
-const login = document.querySelector('#btnLogin');
+const index = document.querySelector('#btnLogin');
 const error = document.querySelector('#errorLabel');
 
 async function POST(url, data) {
@@ -15,15 +15,15 @@ async function POST(url, data) {
     return await response.json();
 }
 
-login.onclick = async () => {
+index.onclick = async () => {
     try {
-        const response = await POST("/login", {userName: username.value, password: password.value});
-        if (response.ok) {
-            window.location.href = "/user";
+        const response = await POST("/index", {userName: username.value, password: password.value});
+        if (response.ok === true) {
+            window.location.href = "/ride";
         }
         else {
             password.value = "";
-            error.innerHTML = "Incorrect password!";
+            error.innerHTML = response.ok;
         }
     } catch (e) {
         error.innerHTML = e.name + ": " + e.message;

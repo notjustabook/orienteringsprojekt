@@ -43,7 +43,6 @@ exports.getUser = function(userName) {
 
 exports.login = async function(username,password) {
     const user = await User.findOne({userName: username}).exec();
-    console.log('user: ' + user);
     if(user == null)
         return 'Incorrect username';
     if(!await user.comparePasswords(password))
