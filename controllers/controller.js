@@ -14,11 +14,16 @@ exports.createEvent = function (eventName, location, date) {
         location: location,
         date: date
     });
-    return event.save();
+    event.save();
+    return event;
 };
 
 exports.getEvents = function() {
     return Event.find().exec();
+};
+
+exports.getEvent = function(eventName) {
+    return Event.findOne({'eventName': eventName}).exec();
 };
 
 exports.createUser = function (name, userName, password) {
@@ -27,7 +32,8 @@ exports.createUser = function (name, userName, password) {
             userName: userName,
             password: password,
         });
-        return user.save();
+        user.save();
+        return user;
 };
 
 exports.getUser = function(userName) {
@@ -35,10 +41,13 @@ exports.getUser = function(userName) {
 
 };
 
-exports.login = function(username,password) {
-    const user = getUser(username);
-    if(user)
-    return user.password === Hash(password + user.salt);
+exports.login = async function(username,password) {
+    const user = await User.findOne({userName: username}).exec();
+    if(user == null)
+        return 'Incorrect username';
+    if(!await user.comparePasswords(password))
+        return 'Incorrect password';
+    return await user.comparePasswords(password);
 };
 
 exports.createRide = function(pickUpPoint, numberOfPassengers) {

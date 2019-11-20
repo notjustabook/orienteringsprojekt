@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebstormProjects/orienteringsprojekt/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebstormProjects/orienteringsprojekt/controllers/controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebstormProjects/orienteringsprojekt/models/Ride.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Ride.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Ride.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/eventTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/eventTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/rideTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/rideTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/userTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/userTest.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +19,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/HTML introduktion/opgaver12" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -75,8 +68,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574067111834</updated>
-      <workItem from="1574067113089" duration="1231000" />
+      <workItem from="1574067113089" duration="14553000" />
     </task>
+    <task id="LOCAL-00001" summary="Ride module/test/gui">
+      <created>1574068497772</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574068497772</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,5 +93,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ride module/test/gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ride module/test/gui" />
   </component>
 </project>

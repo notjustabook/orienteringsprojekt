@@ -1,0 +1,36 @@
+#login{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: darkgrey;
+    padding: 10px;
+    width: 20%;
+    height: 55px;
+    float: right;
+}
+#login{
+    margin-right: 0px;
+}
+.btnLogin{
+    height: 15px;
+    alignment: bottom;
+
+}
+body{
+    margin: 0px;
+    background: #DCDCDC;
+}
+input{
+
+}
+
+.grids{
+    display: grid;
+    grid-template-rows: auto auto;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+label{
+    alignment: center;
+    height: 4px;
+    font-size: 15px;
+}
