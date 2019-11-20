@@ -41,6 +41,10 @@ exports.getUser = function(userName) {
 
 };
 
+exports.createRegistration = function(){
+
+};
+
 exports.login = async function(username,password) {
     const user = await User.findOne({userName: username}).exec();
     if(user == null)
