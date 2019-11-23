@@ -60,10 +60,11 @@ exports.login = async function(username,password) {
     return await user.comparePasswords(password);
 };
 
-exports.createRide = function(pickUpPoint, numberOfPassengers) {
+exports.createRide = function(userName, pickUpPoint, numberOfPassengers) {
     const ride = new Ride({
+        driver: userName,
         pickUpPoint: pickUpPoint,
-        numberOfPassengers: numberOfPassengers,
+        numberOfSeats: numberOfPassengers,
         count: 0
     });
     ride.save();
