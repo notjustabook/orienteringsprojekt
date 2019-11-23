@@ -2,9 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const registration = new Schema({
-    noOfSeats: Number,
-    user: Object,
-    ride: Object
+
+    // muligvis noget object validation inden
+    noOfPassangers: Number,
+    rideOwner: Object,
+    rideTaker: Object
 });
 
 module.exports = mongoose.model('Registration', registration);

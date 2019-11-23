@@ -41,8 +41,14 @@ exports.getUser = function(userName) {
 
 };
 
-exports.createRegistration = function(){
-
+exports.createRegistration = function(rideOwner, ridetaker, numberOfPassengers ){
+    const registration = new Registration({
+        numberOfPassengers: numberOfPassengers,
+        rideOwner: rideOwner,
+        ridetaker: ridetaker,
+    });
+    registration.save();
+    return registration;
 };
 
 exports.login = async function(username,password) {
