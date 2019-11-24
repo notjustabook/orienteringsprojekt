@@ -23,17 +23,20 @@ exports.getEvent = function(eventName) {
     return Event.findOne({'eventName': eventName}).exec();
 };
 
-exports.createUser = function (name, userName, password) {
+exports.createUser = function (name, username, password) {
+    if (password === '') {
+        throw "Password skal udfyldes.";
+    }
     const user = new User({
         name: name,
-        userName: userName,
+        username: username,
         password: password,
     });
     return user.save();
 };
 
-exports.getUser = function(userName) {
-    return User.findOne({'userName': userName}).exec();
+exports.getUser = function(username) {
+    return User.findOne({'username': username}).exec();
 };
 
 exports.login = function(username,password) {

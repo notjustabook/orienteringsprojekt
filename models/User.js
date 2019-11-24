@@ -5,7 +5,7 @@ const saltRounds = 10;
 
 const user = new Schema({
     name: String,
-    userName: String,
+    username: String,
     password: String,
 });
 

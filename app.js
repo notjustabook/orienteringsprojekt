@@ -4,8 +4,10 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 //const Hash = require('../');
 const config = require('./config');
+app.use(express.static('public', {index: 'user.html'}));
+app.use(express.json());
 
-mongoose.connect('mongodb+srv://admin:gOiaNFJ8IdbcwEcL@cluster0-ig3ch.gcp.mongodb.net/test', {useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://admin:gOiaNFJ8IdbcwEcL@cluster0-ig3ch.gcp.mongodb.net/orienteringsprojekt?retryWrites=true&w=majority', {useNewUrlParser: true,useUnifiedTopology: true});
 
 console.log('Hello world!');
 /*
