@@ -5,7 +5,7 @@ const registration = new Schema({
 
     // muligvis noget object validation inden
     noOfPassangers: Number,
-    rideOwner: Object,
+    ride: Object,
     rideTaker: Object
 });
 

@@ -41,15 +41,23 @@ exports.getUser = function(userName) {
 
 };
 
-exports.createRegistration = function(rideOwner, ridetaker, numberOfPassengers ){
+exports.createRegistration = function(ride, rideTakerUserName, numberOfPassengers ){
     const registration = new Registration({
         numberOfPassengers: numberOfPassengers,
-        rideOwner: rideOwner,
-        ridetaker: ridetaker,
+        ride: getRide(ride),
+        rideTaker: getUser(rideTakerUserName),
     });
+    rideTaker.rides.push(registration);
+    ride.registrations.push(registration);
     registration.save();
+    rideTaker.save();
+    ride.save();
     return registration;
 };
+
+exports.getRegistration = function(){
+    return Registration.find().exec;
+}
 
 exports.login = async function(username,password) {
     const user = await User.findOne({userName: username}).exec();
@@ -60,12 +68,12 @@ exports.login = async function(username,password) {
     return await user.comparePasswords(password);
 };
 
-exports.createRide = function(userName, pickUpPoint, numberOfPassengers) {
+exports.createRide = function(userName, pickUpPoint, numberOfSeats) {
     const ride = new Ride({
         driver: userName,
         pickUpPoint: pickUpPoint,
-        numberOfSeats: numberOfPassengers,
-        count: 0
+        numberOfSeats: numberOfSeats,
+        count: 0,
     });
     ride.save();
     return ride;
@@ -79,7 +87,5 @@ exports.getRides = function() {
     return Ride.find().exec;
 };
 
-exports.getRegistration = function(){
-    return Registration.find().exec;
-}
+
 

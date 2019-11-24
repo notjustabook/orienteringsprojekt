@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
-const ride = new Schema({
+const rideSchema = mongoose.Schema;
+const ride = new rideSchema({
     driver: String,
     pickUpPoint: String,
     numberOfSeats: Number,
-    count: 0
+    count: 0,
+    registrations: [{type: Object, ref: 'Registration'}],
 });
 
 module.exports = mongoose.model('Ride', ride);
