@@ -8,6 +8,7 @@ router
         const name = sanitize(req.body.name);
         const username = sanitize(req.body.username);
         const password = sanitize(req.body.password);
+        const confirmPassword = sanitize(req.body.confirmpassword);
 
         try {
             let user = await controller.getUser(username);
@@ -15,13 +16,15 @@ router
             if (user !== null) {
                 res.send({ok: false, message: 'user exists'});
             } else if(!checkInputs(name, /^[a-zA-ZÆØÅæøå\-]+$/) || !checkInputs(username, /^[a-zA-Z0-9ÆØÅæøå]+$/)) {
-                res.send({ok: false, message: 'Brugernavn og navn må kun indeholde tegn fra A-Å og 0-9.'});
+                res.send({ok: false, message: 'Brugernavn og navn må kun indeholde tegn fra A-Å og 0-9'});
+            } else if (password !== confirmPassword) {
+                res.send({ok: false, message: 'no match'});
             } else {
                 try {
                     await controller.createUser(name, username, password);
                     res.send({ok: true, message: 'created'});
                 } catch(err) {
-                    res.send({ok: false, message: 'Password skal udfyldes.'});
+                    res.send({ok: false, message: 'Password skal udfyldes'});
                 }
             }
         } catch(err) {

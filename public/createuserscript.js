@@ -1,6 +1,7 @@
 const nameField = document.querySelector('.name');
 const usernameField = document.querySelector('.username');
 const passwordField = document.querySelector('.password');
+const confirmPasswordField = document.querySelector('.confirmpassword');
 const successBox = document.querySelector('.successbox');
 
 document.querySelector('.btncreate').onclick = async () => {
@@ -15,20 +16,24 @@ document.querySelector('.btncreate').onclick = async () => {
         const response = await POST('/createUser', {
             name: nameField.value,
             username: usernameField.value,
-            password: passwordField.value
+            password: passwordField.value,
+            confirmpassword: confirmPasswordField.value,
         });
         if (response.message === "created") {
             successBox.innerHTML = 'Bruger med brugernavn ' + usernameField.value + ' er oprettet';
             clearFields();
         } else if (response.message === "user exists") {
-            successBox.innerHTML = 'Brugernavnet er allerede i brug.';
+            successBox.innerHTML = 'Brugernavnet er allerede i brug';
+            usernameField.value = '';
+        } else if (response.message === "no match") {
+            successBox.innerHTML = 'Passwords skal matche';
             usernameField.value = '';
         } else {
-            successBox.innerHTML = 'Password skal udfyldes.';
+            successBox.innerHTML = 'Password skal udfyldes';
             usernameField.value = '';
         }
     } catch (err) {
-        successBox.innerHTML = 'Noget gik galt.';
+        successBox.innerHTML = 'Noget gik galt: ' + err;
         console.log(err);
     }
 };
@@ -50,6 +55,7 @@ function clearFields() {
     nameField.value = '';
     usernameField.value = '';
     passwordField.value = '';
+    confirmPasswordField.value = '';
 }
 
 function isFilledOut() {
@@ -65,6 +71,10 @@ function isFilledOut() {
         successBox.innerHTML = 'Password skal udfyldes';
         return false;
     }
+    if (confirmPasswordField.value === '') {
+        successBox.innerHTML = 'Bekræft venligst dit password';
+        return false;
+    }
     return true;
 }
 
@@ -77,6 +87,10 @@ function checkInput() {
     }
     if (nameField.value.match(nameRegex) === null) {
         successBox.innerHTML = 'Navn må kun indeholde bogstaver fra A-Å og mellemrum';
+        return false;
+    }
+    if (passwordField.value !== confirmPasswordField.value) {
+        successBox.innerHTML = 'Passwords matcher ikke';
         return false;
     }
     return true;
