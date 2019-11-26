@@ -4,16 +4,15 @@ let path = '../models/';
 let Event = require(path + 'Event');
 let User = require(path + 'User');
 let Ride = require(path + 'Ride');
-
-
-
+let Registration = require(path + 'Registration');
+let bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 exports.createEvent = function (eventName, location, date) {
     const event = new Event({
         eventName: eventName,
         location: location,
-        date: date
+        date: date,
     });
     event.save();
     return event;
@@ -27,19 +26,23 @@ exports.getEvent = function(eventName) {
     return Event.findOne({'eventName': eventName}).exec();
 };
 
-exports.createUser = function (name, userName, password) {
-        const user = new User({
-            name: name,
-            userName: userName,
-            password: password,
-        });
-        user.save();
-        return user;
+exports.createUser = function (name, username, password) {
+    if (password === '') {
+        throw "Password skal udfyldes.";
+    }
+    const user = new User({
+        name: name,
+        username: username,
+        password: password,
+    });
+    return user.save();
 };
 
-exports.getUser = function(userName) {
-    return User.findOne({'userName': userName}).exec();
+exports.getUser = function(username) {
+    return User.findOne({'username': username}).exec();
 };
+
+
 
 exports.login = async function(username,password) {
     const user = await User.findOne({userName: username}).exec();
@@ -50,18 +53,28 @@ exports.login = async function(username,password) {
     return await user.comparePasswords(password);
 };
 
-exports.createRide = function(pickUpPoint, numberOfPassengers) {
+exports.createRide = function(userName, pPoint, numberOfSeats, eName) {
     const ride = new Ride({
-        pickUpPoint: pickUpPoint,
-        numberOfPassengers: numberOfPassengers,
-        count: 0
+        driver: userName,
+        pickUpPoint: pPoint,
+        numberOfSeats: numberOfSeats,
+        count: 0,
+
     });
+    const event =  this.getEvent(eName);
+    console.log(event);
+    // here we save a reference to the ride on a given event object.
+    // this is not part of Rides tests yet.
+    event.registrations.push(ride);
+    event.findOneAndUpdate({eventName: eName}).exec();
+
     ride.save();
     return ride;
 };
 
 exports.getRide = async function(pickUpPoint) {
-    return await Ride.findOne({pickUpPoint: pickUpPoint}).exec();
+    const ride = await Ride.findOne({pickUpPoint: pickUpPoint}).exec();
+    return ride;
 };
 
 exports.getRides = function() {
@@ -72,3 +85,31 @@ exports.deleteRegistration = function(user,ride){
     Ride.delete(driver:user.username);
     Ride.delete()
 };
+
+exports.createRegistration =  function(pickUpPoint, rideTakerUserName, numberOfPassengers ){
+
+    const _rideTaker =  this.getUser(rideTakerUserName);
+    const _ride =  this.getRide(pickUpPoint);
+
+
+    let registration = new Registration({
+        numberOfPassengers: numberOfPassengers,
+        ride: _ride,
+        rideTaker: _rideTaker,
+    });
+    console.log(registration);
+    // her skal der nok laves noget validation inden de forskellige objekter pushes på arrays.
+    // rideTaker.registrations.
+    console.log(_ride);
+    _ride.registrations.push(registration);
+    registration.save();
+    rideTaker.save();
+    ride.save();
+    return registration;
+};
+
+exports.getRegistration = function(){
+    return Registration.find().exec;
+}
+
+
