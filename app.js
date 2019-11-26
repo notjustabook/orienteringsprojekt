@@ -11,14 +11,18 @@ mongoose.connect('mongodb+srv://admin:gOiaNFJ8IdbcwEcL@cluster0-ig3ch.gcp.mongod
 
 console.log('Hello world!');
 
-app.post('/index', async (request, response) => {
-    const {userName, password} = request.body;
-    const loginStatus = await controller.login(userName,password);
-        response.send({ok: loginStatus});
+app.post('/index', async (req, res) => {
+    const {userName: username, password} = req.body;
+    const loginStatus = await controller.login(username,password);
+    if(loginStatus === true){
+        req.index.user = username;
+        res.send({ok: loginStatus});
+    }
 });
 
 app.get('/ride', async function(req, res) {
-   res.redirect('ride.html');
+    if(req.ride.user)
+        res.redirect('ride');
 });
 
 app.delete('/ride', async function(res,req) {

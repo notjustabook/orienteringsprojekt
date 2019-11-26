@@ -67,3 +67,8 @@ exports.getRide = async function(pickUpPoint) {
 exports.getRides = function() {
     return Ride.find().exec;
 };
+
+exports.deleteRegistration = function(user,ride){
+    Ride.delete(driver:user.username);
+    Ride.delete()
+};
