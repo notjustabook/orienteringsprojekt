@@ -1,12 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 
 const registration = new Schema({
 
-    // muligvis noget object validation inden
     noOfPassangers: Number,
-    ride: Object,
-    rideTaker: Object
+    ride: {
+        type: ObjectId,
+        ref: 'Ride'
+    },
+    rideTaker: {
+        type: ObjectId,
+        ref: 'User'
+     }
 });
 
 module.exports = mongoose.model('Registration', registration);

@@ -1,12 +1,19 @@
 const mongoose = require('mongoose');
+let path = '../models/';
+let Registration = require(path + 'Registration');
 
-const rideSchema = mongoose.Schema;
-const ride = new rideSchema({
+const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
+
+const ride = new Schema({
     driver: String,
     pickUpPoint: String,
     numberOfSeats: Number,
     count: 0,
-    registrations: [{type: Object, ref: 'Registration'}],
+    registrations: [{
+        type: ObjectId, 
+        ref: 'Registration'
+    }],
 });
 
 module.exports = mongoose.model('Ride', ride);
