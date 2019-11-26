@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-
 const ride = new Schema({
+    driver: String,
     pickUpPoint: String,
-    numberOfPassengers: Number,
+    numberOfSeats: Number,
     count: 0
 });
 

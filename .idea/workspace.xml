@@ -3,6 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/orienteringsprojekt/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/orienteringsprojekt/controllers/controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebstormProjects/orienteringsprojekt/models/Ride.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Ride.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Ride.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/eventTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/eventTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/rideTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/rideTest.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +31,6 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.9.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -41,10 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.app.js">
-    <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="Ride test.Checks pickUpPoint attribute" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -79,11 +83,22 @@
       <option name="presentableId" value="Default" />
       <updated>1574067111834</updated>
       <workItem from="1574067113089" duration="1231000" />
-      <workItem from="1574525010701" duration="7994000" />
-      <workItem from="1574600729193" duration="4206000" />
-      <workItem from="1574667408081" duration="7341000" />
-      <workItem from="1574760111581" duration="1198000" />
     </task>
+    <task id="LOCAL-00001" summary="Ride module/test/gui">
+      <created>1574068497772</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574068497772</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit">
+      <created>1574239289981</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574239289981</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,5 +116,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ride module/test/gui" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

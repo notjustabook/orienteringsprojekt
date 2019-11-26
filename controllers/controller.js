@@ -5,6 +5,10 @@ let Event = require(path + 'Event');
 let User = require(path + 'User');
 let Ride = require(path + 'Ride');
 
+
+
+const saltRounds = 10;
+
 exports.createEvent = function (eventName, location, date) {
     const event = new Event({
         eventName: eventName,
@@ -39,16 +43,20 @@ exports.getUser = function(username) {
     return User.findOne({'username': username}).exec();
 };
 
-exports.login = function(username,password) {
-    const user = getUser(username);
-    if(user)
-    return user.password === Hash(password + user.salt);
+exports.login = async function(username,password) {
+    const user = await User.findOne({userName: username}).exec();
+    if(user == null)
+        return 'Incorrect username';
+    if(!await user.comparePasswords(password))
+        return 'Incorrect password';
+    return await user.comparePasswords(password);
 };
 
-exports.createRide = function(pickUpPoint, numberOfPassengers) {
+exports.createRide = function(userName, pickUpPoint, numberOfPassengers) {
     const ride = new Ride({
+        driver: userName,
         pickUpPoint: pickUpPoint,
-        numberOfPassengers: numberOfPassengers,
+        numberOfSeats: numberOfPassengers,
         count: 0
     });
     ride.save();

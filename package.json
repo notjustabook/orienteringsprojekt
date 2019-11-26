@@ -10,8 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "assert": "^2.0.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^3.0.7",
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "mocha": "^6.2.2",
     "moment": "^2.24.0",
     "mongo-sanitize": "^1.0.1",
@@ -19,9 +20,9 @@
     "should": "^13.2.3"
   },
   "devDependencies": {
+    "assert": "^2.0.0",
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
-    "assert": "^2.0.0",
     "mongoose": "^5.7.11"
   }
 }

@@ -10,12 +10,11 @@ async function POST(url, data) {
     return await response.json();
 };
 
-
 async function createRide() {
     try {
         const pickUpPointField = document.getElementById('pickUpPoint');
         const numberOfPassengersField = document.getElementById('numberOfPassengers');
-        await POST('/', {pickUpPoint: pickUpPointField.value, numberOfPassengers: numberOfPassengersField.value});
+        await POST('/ride', {pickUpPoint: pickUpPointField.value, numberOfPassengers: numberOfPassengersField.value});
     } catch (err) {
         console.log("Mistakes.." + err);
     };
@@ -38,3 +37,7 @@ async function deleteRide() {
         console.log("Mistakes.." + err);
     }
 };
+
+async function loadRides() {
+
+}

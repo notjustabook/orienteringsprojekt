@@ -23,8 +23,8 @@ user.pre('save', function(next) {
    })
 });
 
-user.methods.comparePasswords = function(toCompare) {
-    return bcrypt.compare(toCompare, this.password);
+user.methods.comparePasswords = async function(toCompare) {
+    return await bcrypt.compare(toCompare, this.password);
 };
 
 module.exports = mongoose.model('User', user);

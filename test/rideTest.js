@@ -1,20 +1,23 @@
 const mocha = require('mocha');
 const assert = require('assert');
-const Ride = require('../models/Ride');
+
 const controller = require('../controllers/controller');
 
 //Describes test
 describe('Ride test', function() {
-
-    const ride = controller.createRide('test', 5);
+    const ride = controller.createRide('driverTest', 'test', 5);
 
     //Creates test
     it('Checks pickUpPoint attribute', function(){
         assert(ride.pickUpPoint === 'test');
     });
 
+    it('Checks driver attribute', function(){
+        assert(ride.driver === 'driverTest');
+    });
+
     it('Checks numberOfPassengers attribute', function(){
-        assert(ride.numberOfPassengers === 5);
+        assert(ride.numberOfSeats === 5);
     });
 
     it('Saves a record to the database', async function() {
