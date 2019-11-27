@@ -2,7 +2,7 @@ const mocha = require('mocha');
 const should = require('should');
 let path = '../models/';
 let user = require(path + 'User');
-let controller = require('../controllers/controller');
+let controller = require('../controllers/userController');
 let mongoose = require('./connection');
 
 beforeEach(async function() {
