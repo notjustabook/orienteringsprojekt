@@ -16,11 +16,11 @@ describe('Event test', function () {
     });
     it('Test event date', function () {
         assert(event.date.getFullYear() === 2012);
-    })
+    });
     it('Test event date', function () {
         assert(event.date.getMonth() === 0);
-    })
+    });
     it('Test event date', function () {
         assert(event.date.getDate() === 1);
     })
-})
+});

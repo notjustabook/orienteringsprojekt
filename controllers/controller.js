@@ -5,8 +5,6 @@ let Event = require(path + 'Event');
 let User = require(path + 'User');
 let Ride = require(path + 'Ride');
 let Registration = require(path + 'Registration');
-let bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 exports.createEvent = function (eventName, location, date) {
     const event = new Event({
@@ -53,58 +51,60 @@ exports.login = async function(username,password) {
     return await user.comparePasswords(password);
 };
 
-exports.createRide = function(userName, pPoint, numberOfSeats, eName) {
+exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
     const ride = new Ride({
         driver: userName,
         pickUpPoint: pPoint,
         numberOfSeats: numberOfSeats,
         count: 0,
-    
     });
-    const event =  this.getEvent(eName);
+    const event = await this.getEvent(eName);
+    console.log("Here is the event:");
     console.log(event);
     // here we save a reference to the ride on a given event object.
     // this is not part of Rides tests yet.
-    event.registrations.push(ride);
-    event.findOneAndUpdate({eventName: eName}).exec();
+    if(event.rides === undefined)
+    {
+        event.rides = [];
+    }
+    await event.rides.push(ride._id);
+    await event.save();
 
-    ride.save();
+    await ride.save();
     return ride;
 };
 
 exports.getRide = async function(pickUpPoint) {
-    const ride = await Ride.findOne({pickUpPoint: pickUpPoint}).exec();
-    return ride;
+    return Ride.findOne({pickUpPoint: pickUpPoint}).exec();
 };
 
 exports.getRides = function() {
     return Ride.find().exec;
 };
 
-exports.createRegistration =  function(pickUpPoint, rideTakerUserName, numberOfPassengers ){
+exports.createRegistration = async function(pickUpPoint, rideTakerUserName, numberOfPassengers ){
 
-    const _rideTaker =  this.getUser(rideTakerUserName);
-    const _ride =  this.getRide(pickUpPoint);
-  
+    const _rideTaker = await this.getUser(rideTakerUserName);
+    const _ride = await this.getRide(pickUpPoint);
 
     let registration = new Registration({
         numberOfPassengers: numberOfPassengers,
         ride: _ride,
-        rideTaker: _rideTaker,
+        rideTaker: _rideTaker.id,
     });
     console.log(registration);
     // her skal der nok laves noget validation inden de forskellige objekter pushes på arrays.
     // rideTaker.registrations.
     console.log(_ride);
-    _ride.registrations.push(registration);
+    //_ride.registrations.push(registration);
     registration.save();
-    rideTaker.save();
-    ride.save();
+    //rideTaker.save();
+    //ride.save();
     return registration;
 };
 
 exports.getRegistration = function(){
     return Registration.find().exec;
-}
+};
 
 
