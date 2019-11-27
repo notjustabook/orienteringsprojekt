@@ -10,7 +10,16 @@ const saltRounds = 10;
 const user = new Schema({
     name: String,
     username: String,
-    password: String
+    password: String,
+    rides: [{
+        id: Number,
+         ref: 'Ride'
+        }],
+
+    /*registrations: [{
+        type: ObjectId, 
+        ref: 'Registration'
+    }]*/
 });
 
 user.pre('save', function(next) {
