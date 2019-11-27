@@ -1,7 +1,7 @@
 const mocha = require('mocha');
 const assert = require('assert');
 const User = require('../models/User');
-const controller = require('../controllers/controller');
+const controller = require('../controllers/userController');
 
 
 //Describes test

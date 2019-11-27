@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/eventController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/registrationController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/rideController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/userController" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/controller.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Event.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Event.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Ride.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Ride.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/userRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/eventTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/eventTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/loginTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/loginTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/registrationtest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/registrationtest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/rideTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/rideTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/userTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/userTest.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,6 +24,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,7 +109,7 @@
       <updated>1574067111834</updated>
       <workItem from="1574067113089" duration="1231000" />
       <workItem from="1574789482705" duration="5665000" />
-      <workItem from="1574838953695" duration="2918000" />
+      <workItem from="1574838953695" duration="8319000" />
     </task>
     <task id="LOCAL-00001" summary="Ride module/test/gui">
       <created>1574068497772</created>
