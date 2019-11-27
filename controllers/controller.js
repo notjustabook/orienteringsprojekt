@@ -5,8 +5,6 @@ let Event = require(path + 'Event');
 let User = require(path + 'User');
 let Ride = require(path + 'Ride');
 
-
-
 const saltRounds = 10;
 
 exports.createEvent = function (eventName, location, date) {
