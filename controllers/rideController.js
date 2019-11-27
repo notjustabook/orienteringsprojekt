@@ -1,26 +1,20 @@
 "use strict";
 
-let path = '../models/';
-let Ride = require(path + 'Ride');
-let eventController = require('./eventController');
+const path = '../models/';
+const Ride = require(path + 'Ride');
+const eventController = require('./eventController');
 
-exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
+
+exports.createRide = async function(userName, pPoint, numberOfSeats, eventName) {
     const ride = new Ride({
         driver: userName,
         pickUpPoint: pPoint,
         numberOfSeats: numberOfSeats,
-        count: 0,
     });
-    const event = await eventController.getEvent(eName);
-    console.log("Here is the event:");
-    console.log(event);
+    const event = await eventController.getEvent(eventName);
     // here we save a reference to the ride on a given event object.
     // this is not part of Rides tests yet.
-    if(event.rides === undefined)
-    {
-        event.rides = [];
-    }
-    await event.rides.push(pPoint);
+    await event.rides.push(ride);
     await event.save();
 
     await ride.save();
@@ -30,6 +24,12 @@ exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
 exports.getRide = async function(pickUpPoint) {
     return Ride.findOne({pickUpPoint: pickUpPoint}).exec();
 };
+
+exports.updateRideComment = async function(ride ,newString){
+    foundRide = ride.UpdateOne({pickUpPoint: ride.pickUpPoint}).exec();
+    foundRide.comment = newString;
+
+}
 
 exports.getRides = function() {
     return Ride.find().exec;
