@@ -1,14 +1,15 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const controller = require('../orienteringsprojekt/controllers/controller');
-let session = require('express-session');
+const User = require('./models/User');
+const config = require('./config');
 app.use(express.json());
-app.use(express.static('public'));
-app.use(express.static('controllers'));
 app.use(session({secret: 'hemmelig hehe', saveUninitialized: true, resave: true}));
+app.use(express.static('controllers'));
+app.use(express.static('public'));
+let session = require('express-session');
 
-mongoose.connect('mongodb+srv://admin:gOiaNFJ8IdbcwEcL@cluster0-ig3ch.gcp.mongodb.net/test', {useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://admin:gOiaNFJ8IdbcwEcL@cluster0-ig3ch.gcp.mongodb.net/orienteringsprojekt?retryWrites=true&w=majority', {useNewUrlParser: true,useUnifiedTopology: true});
 
 console.log('Hello world!');
 
@@ -20,6 +21,13 @@ app.post('/index', async (req, res) => {
         res.send({ok: loginStatus});
 });
 
+const userRoute = require('./routes/userRoute');
+app.use('/createUser', userRoute);
+
+// Start server
+const port = process.env.PORT || config.localPort;
+app.listen(port);
+console.log('Listening on port ' + port + ' ...');
 app.get('/ride', async function(req, res) {
     const ok = req.session.loginStatus;
     if (ok)
@@ -28,6 +36,7 @@ app.get('/ride', async function(req, res) {
         res.send('piss off wankstain')
 });
 
+module.exports = app;
 app.delete('/ride', async function(res,req) {
 
 });

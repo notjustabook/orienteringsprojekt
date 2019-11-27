@@ -31,3 +31,5 @@ describe('Ride test', function() {
         assert(record.pickUpPoint === 'test');
     });
 });
+
+

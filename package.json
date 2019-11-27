@@ -15,6 +15,7 @@
     "express-session": "^1.17.0",
     "mocha": "^6.2.2",
     "moment": "^2.24.0",
+    "mongo-sanitize": "^1.0.1",
     "mongoose": "^5.7.11",
     "should": "^13.2.3"
   },
