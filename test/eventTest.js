@@ -1,7 +1,7 @@
 const mocha = require("mocha");
 const moment = require('moment');
 const assert = require('assert');
-const controller = require('../controllers/controller');
+const controller = require('../controllers/eventController');
 
 // Describes test
 describe('Event test', function () {
@@ -16,11 +16,11 @@ describe('Event test', function () {
     });
     it('Test event date', function () {
         assert(event.date.getFullYear() === 2012);
-    })
+    });
     it('Test event date', function () {
         assert(event.date.getMonth() === 0);
-    })
+    });
     it('Test event date', function () {
         assert(event.date.getDate() === 1);
     })
-})
+});
