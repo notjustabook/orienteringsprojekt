@@ -3,6 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Event.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Ride.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Ride.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/eventTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/eventTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/registrationtest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/registrationtest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/userTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/userTest.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,13 +21,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1TbUdNZ9YDeW2YpbJO1mnisjk5q" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/registrationtest.js" />
+>>>>>>> 32ea40875304fdb8d00c1f412b1b6f08eff8c507
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -33,11 +52,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.app.js">
-    <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="Ride test.Checks pickUpPoint attribute" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Mocha.test\registrationtest.js">
+    <configuration name="test\registrationtest.js" type="mocha-javascript-test-runner" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -45,18 +61,29 @@
       <pass-parent-env>true</pass-parent-env>
       <ui>bdd</ui>
       <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/rideTest.js</test-file>
-      <test-names>
-        <name value="Ride test" />
-        <name value="Checks pickUpPoint attribute" />
-      </test-names>
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/test/registrationtest.js</test-file>
       <method v="2" />
     </configuration>
+    <configuration name="user test" type="mocha-javascript-test-runner" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/test</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/test/userTest.js</test-file>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Mocha.test\registrationtest.js" />
+      <item itemvalue="Mocha.user test" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.app.js" />
-        <item itemvalue="Mocha.Ride test.Checks pickUpPoint attribute" />
+        <item itemvalue="Mocha.user test" />
       </list>
     </recent_temporary>
   </component>
@@ -70,8 +97,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574067111834</updated>
+<<<<<<< HEAD
       <workItem from="1574067113089" duration="29703000" />
       <workItem from="1574765842118" duration="386000" />
+=======
+      <workItem from="1574067113089" duration="1231000" />
+      <workItem from="1574789482705" duration="5665000" />
+      <workItem from="1574838953695" duration="2918000" />
+>>>>>>> 32ea40875304fdb8d00c1f412b1b6f08eff8c507
     </task>
     <task id="LOCAL-00001" summary="Ride module/test/gui">
       <created>1574068497772</created>

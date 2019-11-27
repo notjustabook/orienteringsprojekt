@@ -4,7 +4,7 @@ const ObjectId = Schema.Types.ObjectId;
 
 const registration = new Schema({
 
-    noOfPassangers: Number,
+    noOfPassengers: Number,
     ride: {
         type: ObjectId,
         ref: 'Ride'

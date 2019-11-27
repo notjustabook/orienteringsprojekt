@@ -9,9 +9,9 @@ const saltRounds = 10;
 
 const user = new Schema({
     name: String,
-    userName: String,
+    username: String,
     password: String,
-    rides: [{
+    /*rides: [{
         type: ObjectId,
          ref: 'Ride'
         }],
@@ -19,7 +19,7 @@ const user = new Schema({
     registrations: [{
         type: ObjectId, 
         ref: 'Registration'
-    }]
+    }]*/
 
 });
 
