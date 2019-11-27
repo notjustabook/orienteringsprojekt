@@ -2,11 +2,16 @@ const mocha = require("mocha");
 const moment = require('moment');
 const assert = require('assert');
 const controller = require('../controllers/eventController');
+let mongoose = require('./connection');
 
 // Describes test
 describe('Event test', function () {
 
-    const event = controller.createEvent('eventName-test' , 'location-test', moment('2012-01-01'));
+    let event = null;
+
+    before(async function() {
+        event = await controller.createEvent('eventName-test' , 'location-test', moment('2012-01-01'));
+    });
 
     it('Test event name', function () {
         assert(event.eventName === 'eventName-test');

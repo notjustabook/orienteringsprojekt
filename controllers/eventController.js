@@ -9,8 +9,7 @@ exports.createEvent = function (eventName, location, date) {
         location: location,
         date: date,
     });
-    event.save();
-    return event;
+    return event.save();
 };
 
 exports.getEvents = function() {

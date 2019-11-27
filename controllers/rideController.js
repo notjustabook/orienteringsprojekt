@@ -16,15 +16,9 @@ exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
     console.log(event);
     // here we save a reference to the ride on a given event object.
     // this is not part of Rides tests yet.
-    if(event.rides === undefined)
-    {
-        event.rides = [];
-    }
-    await event.rides.push(pPoint);
+    await event.rides.push(ride);
     await event.save();
-
-    await ride.save();
-    return ride;
+    return ride.save();
 };
 
 exports.getRide = async function(pickUpPoint) {

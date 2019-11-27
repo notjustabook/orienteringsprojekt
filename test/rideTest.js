@@ -1,11 +1,16 @@
 const mocha = require('mocha');
 const assert = require('assert');
 
-const controller = require('../controllers/eventController');
+const controller = require('../controllers/rideController');
 
 //Describes test
 describe('Ride test', function() {
-    const ride = controller.createRide('driverTest', 'test', 5);
+
+    let ride = null;
+
+    before(async function() {
+        ride = await controller.createRide('driverTest', 'test', 5);
+    });
 
     //Creates test
     it('Checks pickUpPoint attribute', function(){
