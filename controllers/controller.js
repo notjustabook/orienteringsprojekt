@@ -56,20 +56,14 @@ exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
         driver: userName,
         pickUpPoint: pPoint,
         numberOfSeats: numberOfSeats,
-        count: 0,
     });
     const event = await this.getEvent(eName);
     console.log("Here is the event:");
     console.log(event);
     // here we save a reference to the ride on a given event object.
     // this is not part of Rides tests yet.
-    if(event.rides === undefined)
-    {
-        event.rides = [];
-    }
     await event.rides.push(ride._id);
     await event.save();
-
     await ride.save();
     return ride;
 };
@@ -82,28 +76,20 @@ exports.getRides = function() {
     return Ride.find().exec;
 };
 
-exports.createRegistration = async function(pickUpPoint, rideTakerUserName, numberOfPassengers ){
+exports.createRegistration = async function(ride, passanger, numberOfPassengers ){
 
-    const _rideTaker = await this.getUser(rideTakerUserName);
-    const _ride = await this.getRide(pickUpPoint);
 
     let registration = new Registration({
         numberOfPassengers: numberOfPassengers,
-        ride: _ride,
-        rideTaker: _rideTaker.id,
+        ride: ride.id,
+        passanger: passanger.username,
     });
-    console.log(registration);
-    // her skal der nok laves noget validation inden de forskellige objekter pushes på arrays.
-    // rideTaker.registrations.
-    console.log(_ride);
-    //_ride.registrations.push(registration);
+
     registration.save();
-    //rideTaker.save();
-    //ride.save();
     return registration;
 };
 
-exports.getRegistration = function(){
+exports.getRegistrations = function(){
     return Registration.find().exec;
 };
 

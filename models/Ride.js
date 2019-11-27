@@ -9,11 +9,8 @@ const ride = new Schema({
     driver: String,
     pickUpPoint: String,
     numberOfSeats: Number,
-    count: 0,
-    /*registrations: [{
-        type: ObjectId, 
-        ref: 'Registration'
-    }],*/
+    comment: String,
+
 });
 
 module.exports = mongoose.model('Ride', ride);
