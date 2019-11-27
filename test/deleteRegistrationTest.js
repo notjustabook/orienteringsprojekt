@@ -6,19 +6,18 @@ const controller = require('../controllers/controller');
 
 
 //Describes test
-describe('Delete registration', function() {
+describe('Delete registration', async function() {
     controller.createUser('testName','testUsername','testPassword');
-    const user = controller.getUser('testUsername');
     controller.createRide('westOfTest',4);
-    const ride = controller.getRide('westOfTest');
-        controller.createRegistration(user,ride);
-    const registration = controller.getRegistration(user,ride);
-    it('Tests if registration exists', function () {
+        await controller.createRegistration('westOfTest','testUsername',1);
+    const registration = await controller.getRegistration('testUsername','westOfTest');
+    console.log(registration);
+    it('Tests if registration exists', async function () {
     assert(registration);
     });
 
-    it('Tests if registration gets deleted', function () {
-        controller.deleteRegistration(user,ride);
-        assert(registration === null);
+    it('Tests if registration gets deleted', async function () {
+        await controller.deleteRegistration('testUsername','westOfTest');
+        assert(Registration.findOne('testUsername'));
     });
 });

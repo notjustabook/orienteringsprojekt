@@ -81,18 +81,27 @@ exports.getRides = function() {
     return Ride.find().exec;
 };
 
-exports.deleteRegistration = function(user,ride){
-    Ride.delete(driver:user.username);
+exports.deleteRegistration = function(username,pickUpPoint){
+    Registration.delete(username);
+    const user = User.findOne(username);
+    const ride = Ride.findOne(pickUpPoint);
+    for(let i in user.registrations){
+        if(user.registrations[i].pickUpPoint === pickUpPoint)
+            user.registrations.splice(i,1);
+    }
+    for(let i in ride.registrations){
+        if(ride.registrations[i].username === username)
+            user.registrations.splice(i,1);
+    }
     Ride.delete()
 };
 
-exports.createRegistration =  function(pickUpPoint, rideTakerUserName, numberOfPassengers ){
+exports.createRegistration = async function(pickUpPoint, rideTakerUserName, numberOfPassengers ){
 
-    const _rideTaker =  this.getUser(rideTakerUserName);
-    const _ride =  this.getRide(pickUpPoint);
+    const _rideTaker = await User.findOne({username:rideTakerUserName}).exec();
+    const _ride =  await Ride.findOne({pickUpPoint:pickUpPoint}).exec();
 
-
-    let registration = new Registration({
+    const registration = new Registration({
         numberOfPassengers: numberOfPassengers,
         ride: _ride,
         rideTaker: _rideTaker,
@@ -110,6 +119,5 @@ exports.createRegistration =  function(pickUpPoint, rideTakerUserName, numberOfP
 
 exports.getRegistration = function(){
     return Registration.find().exec;
-}
-
+};
 

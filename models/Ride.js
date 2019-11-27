@@ -9,9 +9,9 @@ const ride = new Schema({
     driver: String,
     pickUpPoint: String,
     numberOfSeats: Number,
-    count: 0,
     registrations: [{
-        type: ObjectId, 
+        type: ObjectId,
+        username: String,
         ref: 'Registration'
     }],
 });

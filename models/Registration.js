@@ -4,13 +4,16 @@ const ObjectId = Schema.Types.ObjectId;
 
 const registration = new Schema({
 
-    noOfPassangers: Number,
+    noOfPassengers: Number,
     ride: {
         type: ObjectId,
+        pickUpPoint: String,
         ref: 'Ride'
     },
+
     rideTaker: {
         type: ObjectId,
+        username: String,
         ref: 'User'
      }
 });

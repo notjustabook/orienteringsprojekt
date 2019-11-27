@@ -13,14 +13,15 @@ const user = new Schema({
     password: String,
     rides: [{
         type: ObjectId,
-         ref: 'Ride'
+        pickUpPoint: String,
+        ref: 'Ride'
         }],
     
     registrations: [{
-        type: ObjectId, 
+        type: ObjectId,
+        pickUpPoint:String,
         ref: 'Registration'
     }]
-
 });
 
 user.pre('save', function(next) {
