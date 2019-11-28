@@ -9,8 +9,7 @@ exports.createRegistration = async function(numberOfPassengers, rideId, passenge
         ride: rideId,
         rideTaker: passengerUsername,
     });
-    registration.save();
-    return registration;
+    return registration.save();
 };
 
 exports.getRegistration = function(){

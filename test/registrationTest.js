@@ -1,8 +1,10 @@
 const assert = require('assert');
 const Reg = require('../models/Registration');
-const userReq = require('../models/User');
-const eventReg = require('../models/Event');
-const rideReg = require('../models/Ride');
+const path = '../models/';
+const userReq = require(path + 'User');
+const eventReq = require(path + 'Event');
+const rideReq = require(path + 'Ride');
+const registrationReq = require(path + 'Registration');
 const registrationController = require('../controllers/registrationController');
 const userController = require('../controllers/userController');
 const eventController = require('../controllers/eventController');
@@ -12,8 +14,23 @@ let mongoose = require('./connection');
 
 // this test requires a user and a user with a ride.
 describe('Registration Test', function() {
-   
+
+   before(async function() {
+      console.log("Clearing the datamabase!");
+      //Clear database before testing!
+      await userReq.deleteMany({});
+      console.log("Bye users!");
+      await eventReq.deleteMany({});
+      console.log("Bye events!");
+      await rideReq.deleteMany({});
+      console.log("Bye rides!");
+      await registrationReq.deleteMany({});
+      console.log("Bye registrations!");
+   });
+
+   console.log("Time to test the thangs!");
    it('Create Registration', async function() {
+      console.log("We're inside it!");
       //Create user and save to database
       let name01 = 'John Nielsen';
       let username01 = 'JN1944';

@@ -18,9 +18,7 @@ exports.createRide = async function(userName, pPoint, numberOfSeats, eventName) 
     // this is not part of Rides tests yet.
     await event.rides.push(ride);
     await event.save();
-
-    await ride.save();
-    return ride;
+    return ride.save();
 };
 
 exports.getRide = async function(pickUpPoint) {
