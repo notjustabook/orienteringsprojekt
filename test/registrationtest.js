@@ -12,6 +12,7 @@ let mongoose = require('./connection');
 
 // this test requires a user and a user with a ride.
 describe('Registration Test', function() {
+   
    it('Create Registration', async function() {
       //Create user and save to database
       let name01 = 'John Nielsen';
