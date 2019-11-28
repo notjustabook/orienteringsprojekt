@@ -1,7 +1,8 @@
 "use strict";
 
-let path = '../models/';
-let Registration = require(path + 'Registration');
+const path = '../models/';
+const Registration = require(path + 'Registration');
+const Ride = require(path + 'Ride');
 
 exports.createRegistration = async function(numberOfPassengers, rideId, passengerUsername){
     let registration = new Registration({
@@ -11,6 +12,13 @@ exports.createRegistration = async function(numberOfPassengers, rideId, passenge
     });
     registration.save();
     return registration;
+};
+
+exports.deleteRegistration = async function(username,rideId){
+    const ride = await Ride.findOne({rideId});
+    const registration = await Registration.findOne({username});
+    ride.numberOfSeats += registration.numberOfPassengers;
+    await Registration.deleteOne(registration);
 };
 
 exports.getRegistration = function(){

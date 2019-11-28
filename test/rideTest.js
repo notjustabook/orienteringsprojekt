@@ -1,7 +1,7 @@
 const mocha = require('mocha');
 const assert = require('assert');
 
-const controller = require('../controllers/eventController');
+const controller = require('../controllers/rideController');
 
 //Describes test
 describe('Ride test', function() {

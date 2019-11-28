@@ -12,8 +12,7 @@ const user = new Schema({
     username: String,
     password: String,
     rides: [{
-        id: Number,
-         ref: 'Ride'
+        id: Number
         }],
 
     /*registrations: [{

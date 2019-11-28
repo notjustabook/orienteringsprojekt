@@ -10,7 +10,7 @@ describe('Login test', function() {
 
     it('Tests with correct information', async function() {
         this.timeout(5000);
-        const login = controller.login('usernameTest','passwordTest');
+        const login = await controller.login('usernameTest','passwordTest');
         assert(login);
     });
 

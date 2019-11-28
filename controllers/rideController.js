@@ -6,11 +6,12 @@ const eventController = require('./eventController');
 const userController = require('./userController');
 const registrationController = require('./registrationController');
 
-exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
+exports.createRide = async function(userName, pPoint, numberOfSeats, eName,rideId) {
     const ride = new Ride({
         driver: userName,
         pickUpPoint: pPoint,
         numberOfSeats: numberOfSeats,
+        rideId: rideId,
     });
     const event = await eventController.getEvent(eName);
     console.log("Here is the event:");
@@ -28,7 +29,10 @@ exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
     await ride.save();
     return ride;
 };
+// generer random id, skal lige tænkes over (simon)
+    function generateID(){
 
+}
 exports.getRide = async function(pickUpPoint) {
     return Ride.findOne({pickUpPoint: pickUpPoint}).exec();
 };

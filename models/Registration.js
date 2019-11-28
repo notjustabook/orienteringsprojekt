@@ -4,7 +4,7 @@ const ObjectId = Schema.Types.ObjectId;
 
 const registration = new Schema({
     noOfPassengers: Number,
-    ride: String,
+    rideId: Number,
     passenger: String
 });
 
