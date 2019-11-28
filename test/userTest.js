@@ -5,12 +5,12 @@ let user = require(path + 'User');
 let controller = require('../controllers/userController');
 let mongoose = require('./connection');
 
-beforeEach(async function() {
-    //Clear database before testing!
-    await user.deleteMany({});
-});
+describe('unitTest', function() {
+    beforeEach(async function() {
+        //Clear database before testing!
+        await user.deleteMany({});
+    });
 
-describe('unitTest', () => {
     it('Create user', async function() {
         //Create user and save to database
         let name = 'Niels John';
@@ -29,4 +29,8 @@ describe('unitTest', () => {
         testUser.username.should.be.equal(userName);
         passwordMatches.should.be.true();
     });
+
+    after('Close DB connection', async function() {
+        await mongoose.disconnect();
+    })
 });

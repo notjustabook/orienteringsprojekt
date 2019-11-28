@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 let path = '../models/';
-let Ride = require(path + 'Ride');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 

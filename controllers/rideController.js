@@ -16,18 +16,11 @@ exports.createRide = async function(userName, pPoint, numberOfSeats, eName,rideI
     const event = await eventController.getEvent(eName);
     console.log("Here is the event:");
     console.log(event);
-
-    // Saves a reference to the ride on a given event object.
-    // Not part of Rides tests yet.
-    if(event.rides === undefined)
-    {
-        event.rides = [];
-    }
-    await event.rides.push(pPoint);
+    // here we save a reference to the ride on a given event object.
+    // this is not part of Rides tests yet.
+    await event.rides.push(ride);
     await event.save();
-
-    await ride.save();
-    return ride;
+    return ride.save();
 };
 // generer random id, skal lige tænkes over (simon)
     function generateID(){

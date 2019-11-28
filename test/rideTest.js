@@ -5,7 +5,12 @@ const controller = require('../controllers/rideController');
 
 //Describes test
 describe('Ride test', function() {
-    const ride = controller.createRide(123,'driverTest', 'test', 5);
+
+    let ride = null;
+
+    before(async function() {
+        ride = await controller.createRide('driverTest', 'test', 5);
+    });
 
     //Creates test
     it('Checks id attribute', function(){
