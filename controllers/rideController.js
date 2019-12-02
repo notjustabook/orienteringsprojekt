@@ -12,26 +12,30 @@ exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
         pickUpPoint: pPoint,
         numberOfSeats: numberOfSeats,
     });
-    const event = await eventController.getEvent(eName);
-    console.log("Here is the event:");
-    console.log(event);
+    const event = await eventController.getEvent(eventName);
     // here we save a reference to the ride on a given event object.
     // this is not part of Rides tests yet.
-    await event.rides.push(ride);
+    await event.rides.push(ride.id);
     await event.save();
     return ride.save();
 };
 
-exports.getRide = async function(pickUpPoint) {
-    return Ride.findOne({pickUpPoint: pickUpPoint}).exec();
+exports.getRide = async function(id) {
+    return Ride.findOne({id: id}).exec();
 };
+
+exports.updateRideComment = async function(ride ,newString){
+    foundRide = ride.UpdateOne({pickUpPoint: ride.pickUpPoint}).exec();
+    foundRide.comment = newString;
+
+}
 
 exports.getRides = function() {
     return Ride.find().exec;
 };
 
 exports.deleteRide = async function(id) {
-    let ride = await getRide(id);
+    let ride = await this.getRide(id);
     let user = await userController.getUser(ride.driver);
     let events = await eventController.getEvents();
     let registrations = await registrationController.getRegistrations();

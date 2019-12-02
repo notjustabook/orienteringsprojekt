@@ -14,11 +14,13 @@ describe('Login test', function() {
     });
 
     it('Tests with correct information', async function() {
-        const login = await controller.login('usernameTest','passwordTest');
-        assert(login.message === 'Succeeded');
+        this.timeout(5000);
+        const login = controller.login('usernameTest','passwordTest');
+        assert(login);
     });
 
     it('Tests with wrong username', async function() {
+        this.timeout(5000);
         const login = await controller.login('username','passwordTest');
         assert(login.message ==='Incorrect username');
     });

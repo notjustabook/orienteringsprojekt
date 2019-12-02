@@ -5,8 +5,9 @@ let user = require(path + 'User');
 let controller = require('../controllers/userController');
 let mongoose = require('./connection');
 
-describe('unitTest', function() {
-    before(async function() {
+describe('User Test', function() {
+    this.timeout(5000);
+    beforeEach(async function() {
         //Clear database before testing!
         await user.deleteMany({});
     });
@@ -20,7 +21,6 @@ describe('unitTest', function() {
 
         //Get user from database
         let testUser = await controller.getUser(userName);
-        console.log(testUser);
         //Checking if the password matches
         let passwordMatches = await testUser.comparePasswords(password);
 

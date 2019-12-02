@@ -11,6 +11,7 @@ const user = new Schema({
     name: String,
     username: String,
     password: String,
+    rides: [{String}],
 });
 
 user.pre('save', async function(next) {
