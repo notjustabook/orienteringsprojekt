@@ -2,6 +2,7 @@
 
 let path = '../models/';
 let Ride = require(path + 'Ride');
+let Registration = require(path + 'Registration');
 const eventController = require('./eventController');
 const userController = require('./userController');
 const registrationController = require('./registrationController');
@@ -25,7 +26,7 @@ exports.getRide = async function(id) {
 };
 
 exports.updateRideComment = async function(ride ,newString){
-    foundRide = ride.UpdateOne({pickUpPoint: ride.pickUpPoint}).exec();
+    let foundRide = Ride.updateOne({pickUpPoint: ride.pickUpPoint}).exec();
     foundRide.comment = newString;
 
 }

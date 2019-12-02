@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/deleteRegistrationTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/registrationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/registrationController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/rideController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/rideController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Event.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Ride.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Ride.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/loginTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/loginTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/registrationTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/registrationTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/rideTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/rideTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/userTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/userTest.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
