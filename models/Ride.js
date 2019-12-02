@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 const ride = new Schema({
-    id: Number,
+    id: String,
     driver: String,
     pickUpPoint: String,
     numberOfSeats: Number,

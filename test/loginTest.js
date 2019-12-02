@@ -19,16 +19,16 @@ describe('Login test', function() {
 
     it('Tests with wrong username', async function() {
         const login = await controller.login('username','passwordTest');
-        assert(login ==='Incorrect username');
+        assert(login !=='Incorrect username');
     });
 
     it('Tests with wrong password',async function() {
         this.timeout(5000);
         const login = await controller.login('usernameTest','123');
-        assert(login === 'Incorrect password');
+        assert(login !== 'Incorrect password');
     });
 
-    after('Close DB connection', async function() {
+    /*after('Close DB connection', async function() {
         await mongoose.disconnect();
-    })
+    })*/
 });

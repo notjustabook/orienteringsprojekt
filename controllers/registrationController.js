@@ -5,13 +5,13 @@ let Registration = require(path + 'Registration');
 
 exports.createRegistration = async function(numberOfPassengers, rideId, passengerUsername){
     let registration = new Registration({
-        numberOfPassengers: numberOfPassengers,
+        noOfPassengers: numberOfPassengers,
         ride: rideId,
-        rideTaker: passengerUsername,
+        passenger: passengerUsername,
     });
     return registration.save();
 };
 
-exports.getRegistration = function(){
+exports.getRegistrations = function(){
     return Registration.find().exec;
 };
