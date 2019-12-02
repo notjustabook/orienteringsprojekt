@@ -6,9 +6,9 @@ const Ride = require(path + 'Ride');
 
 exports.createRegistration = async function(numberOfPassengers, rideId, passengerUsername){
     let registration = new Registration({
-        numberOfPassengers: numberOfPassengers,
+        noOfPassengers: numberOfPassengers,
         ride: rideId,
-        rideTaker: passengerUsername,
+        passenger: passengerUsername,
     });
     return registration.save();
 };
@@ -20,6 +20,6 @@ exports.deleteRegistration = async function(username,rideId){
     await Registration.deleteOne(registration);
 };
 
-exports.getRegistration = function(){
+exports.getRegistrations = function(){
     return Registration.find().exec;
 };
