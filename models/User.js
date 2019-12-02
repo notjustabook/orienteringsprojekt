@@ -1,30 +1,32 @@
+let path = '../models/';
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 const bcrypt = require('bcrypt');
+let Ride = require(path + 'Ride');
 const saltRounds = 10;
+
 
 const user = new Schema({
     name: String,
-    userName: String,
+    username: String,
     password: String,
+    rides: [{String}],
 });
 
-user.pre('save', function(next) {
-   let user = this;
-   bcrypt.genSalt(saltRounds, function (err, salt) {
-       if (err) return next(err);
-
-       bcrypt.hash(user.password, salt, function(err, hash) {
-           if (err) return next(err);
-
-           user.password = hash;
-           next();
-       })
-   })
+user.pre('save', async function(next) {
+    let user = this;
+    try {
+        let salt = await bcrypt.genSalt(saltRounds);
+        user.password = await bcrypt.hash(user.password, salt);
+        next();
+    } catch(err) {
+        return next(err);
+    }
 });
 
-user.methods.comparePasswords = async function(toCompare) {
-    return await bcrypt.compare(toCompare, this.password);
+user.methods.comparePasswords = function(toCompare) {
+    return bcrypt.compare(toCompare, this.password);
 };
 
 module.exports = mongoose.model('User', user);

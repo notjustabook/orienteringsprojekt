@@ -2,16 +2,16 @@ const mocha = require('mocha');
 const should = require('should');
 let path = '../models/';
 let user = require(path + 'User');
-let controller = require('../controllers/controller');
+let controller = require('../controllers/userController');
 let mongoose = require('./connection');
 
-//beforeEach(async function() {
-    //Clear database before testing!
-  //  await user.deleteMany({});
-//});
+describe('User Test', function() {
+    this.timeout(5000);
+    beforeEach(async function() {
+        //Clear database before testing!
+        await user.deleteMany({});
+    });
 
-
-describe('unitTest', () => {
     it('Create user', async function() {
         //Create user and save to database
         let name = 'Niels John';
@@ -26,7 +26,11 @@ describe('unitTest', () => {
 
         //Verify that data has been saved correctly
         testUser.name.should.be.equal(name);
-        testUser.userName.should.be.equal(userName);
+        testUser.username.should.be.equal(userName);
         passwordMatches.should.be.true();
     });
+
+    after('Close DB connection', async function() {
+        await mongoose.disconnect();
+    })
 });

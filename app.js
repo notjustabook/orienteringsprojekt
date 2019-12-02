@@ -2,9 +2,14 @@ const express = require('express');
 const app = express();
 const moment = require('moment');
 const mongoose = require('mongoose');
-const controller = require('../orienteringsprojekt/controllers/controller');
+const User = require('./models/User');
+const config = require('./config');
+const userController = require('./controllers/userController');
+const rideController = require('./controllers/rideController');
 let session = require('express-session');
 app.use(express.json());
+app.use(session({secret: 'hemmelig hehe', saveUninitialized: true, resave: true}));
+app.use(express.static('controllers'));
 app.use(express.static('public'));
 app.use(express.static('controllers'));
 app.use(session({secret: 'hemmelig hehe', saveUninitialized: true, resave: true}));
@@ -12,12 +17,17 @@ app.set('view engine', 'ejs');
 
 mongoose.connect('mongodb+srv://admin:gOiaNFJ8IdbcwEcL@cluster0-ig3ch.gcp.mongodb.net/orienteringsprojekt', {useNewUrlParser: true,useUnifiedTopology: true});
 app.post('/index', async (req, res) => {
-    const {userName, password} = req.body;
-    req.session.driver = userName;
-    const loginStatus = await controller.login(userName,password);
-    req.session.loginStatus = loginStatus;
-        res.send({ok: loginStatus});
+    const {username, password} = req.body;
+    req.session.driver = username;
+    const {status, message} = await userController.login(username, password);
+    req.session.loginStatus = status;
+    res.send({ok: status, message: message});
 });
+
+const userRoute = require('./routes/userRoute');
+app.use('/createUser', userRoute);
+
+// Start server
 
 app.get('/ride', async function(req, res) {
     const ok = req.session.loginStatus;
@@ -34,6 +44,7 @@ app.get('/ride', async function(req, res) {
         res.send('piss off wankstain');
 });
 
+module.exports = app;
 app.delete('/ride', async function(res,req) {
 
 });

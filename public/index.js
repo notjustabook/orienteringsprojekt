@@ -17,13 +17,13 @@ async function POST(url, data) {
 
 index.onclick = async () => {
     try {
-        const response = await POST("/index", {userName: username.value, password: password.value});
+        const response = await POST("/index", {username: username.value, password: password.value});
         if (response.ok === true) {
             window.location.href = "/ride";
         }
         else {
             password.value = "";
-            error.innerHTML = response.ok;
+            error.innerHTML = response.message;
         }
     } catch (e) {
         error.innerHTML = e.name + ": " + e.message;
