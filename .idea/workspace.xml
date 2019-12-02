@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ride.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ride.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/rideController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/rideController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/rideRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rideRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/ride.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/ride.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/connection.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +115,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.app.js" />
+        <item itemvalue="Mocha.user test" />
         <item itemvalue="Mocha.Ride test.Checks pickUpPoint attribute" />
       </list>
     </recent_temporary>

@@ -17,8 +17,9 @@ router
         const ok = req.session.loginStatus;
         if (ok) {
             let dates = [];
-            const rides = await rideController.getRides();
-            const events = await eventController.getEvents();
+            let rides = await rideController.getRides();
+            console.log(rides);
+            let events = await eventController.getEvents();
             events.forEach(function(item) {
                 let parsedDate = moment.utc(item.date).format('MMMM Do, YYYY');
                 dates.push(parsedDate);

@@ -29,10 +29,10 @@ exports.updateRideComment = async function(ride ,newString){
     let foundRide = Ride.updateOne({pickUpPoint: ride.pickUpPoint}).exec();
     foundRide.comment = newString;
 
-}
+};
 
 exports.getRides = function() {
-    return Ride.find().exec;
+    return Ride.find().exec();
 };
 
 exports.deleteRide = async function(id) {
