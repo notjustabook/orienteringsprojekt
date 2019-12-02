@@ -24,7 +24,7 @@ async function createRide() {
     };
 };
 
-function updateRides(event, allRides, logMe) {
+function updateRides(event, allRides) {
     let parsedRides = JSON.parse(allRides);
     let html = "";
     for(let i = 0; i < parsedRides.length; i++) {
