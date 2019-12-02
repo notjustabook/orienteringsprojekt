@@ -8,24 +8,24 @@ let mongoose = require('./connection');
 //Describes test
 describe('Login test', function() {
     before(async function() {
+        this.enableTimeouts(false);
         await User.deleteMany({});
         await controller.createUser('nameTest','usernameTest','passwordTest');
     });
 
     it('Tests with correct information', async function() {
         const login = await controller.login('usernameTest','passwordTest');
-        assert(login);
+        assert(login.message === 'Succeeded');
     });
 
     it('Tests with wrong username', async function() {
         const login = await controller.login('username','passwordTest');
-        assert(login ==='Incorrect username');
+        assert(login.message ==='Incorrect username');
     });
 
     it('Tests with wrong password',async function() {
-        this.timeout(5000);
         const login = await controller.login('usernameTest','123');
-        assert(login === 'Incorrect password');
+        assert(login.message === 'Incorrect password');
     });
 
     after('Close DB connection', async function() {

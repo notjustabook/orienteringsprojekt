@@ -1,14 +1,13 @@
 const mocha = require('mocha');
 const assert = require('assert');
-
 const controller = require('../controllers/rideController');
+const mongoose = require('./connection');
 
 //Describes test
-describe('Ride test', function() {
-
+describe('Ride test', async function() {
     let ride = null;
-
     before(async function() {
+        this.enableTimeouts(false);
         ride = await controller.createRide('driverTest', 'test', 5);
     });
 
@@ -44,6 +43,10 @@ describe('Ride test', function() {
         let record = await controller.getRide(123);
         assert(record === null);
     });
+
+    after('Close DB connection', async function() {
+        await mongoose.disconnect();
+    })
 });
 
 

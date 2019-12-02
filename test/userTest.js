@@ -6,7 +6,7 @@ let controller = require('../controllers/userController');
 let mongoose = require('./connection');
 
 describe('unitTest', function() {
-    beforeEach(async function() {
+    before(async function() {
         //Clear database before testing!
         await user.deleteMany({});
     });

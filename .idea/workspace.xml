@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/routes/eventRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/loginRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/rideRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/orienteringsprojekt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/orienteringsprojekt.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/eventController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/eventController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/registrationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/registrationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/rideController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/rideController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userController" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Event.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Ride.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Ride.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/userRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/eventTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/eventTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/event.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/event.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/loginTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/loginTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/registrationtest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/registrationTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/rideTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/rideTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/userTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/userTest.js" afterDir="false" />
     </list>
@@ -46,7 +46,8 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/loginTest.js" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.9.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/rideTest.js" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
@@ -108,6 +109,18 @@
       <test-file>$PROJECT_DIR$/test/registrationtest.js</test-file>
       <method v="2" />
     </configuration>
+    <configuration name="test\rideTest.js" type="mocha-javascript-test-runner" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/test/rideTest.js</test-file>
+      <method v="2" />
+    </configuration>
     <configuration name="user test" type="mocha-javascript-test-runner" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -124,6 +137,7 @@
       <item itemvalue="Mocha.test\registrationtest.js" />
       <item itemvalue="Mocha.test\eventTest.js" />
       <item itemvalue="Mocha.test\loginTest.js" />
+      <item itemvalue="Mocha.test\rideTest.js" />
       <item itemvalue="Mocha.user test" />
       <item itemvalue="Node.js.app.js" />
     </list>
@@ -147,7 +161,10 @@
       <workItem from="1574067113089" duration="1231000" />
       <workItem from="1574789482705" duration="5665000" />
       <workItem from="1574838953695" duration="12201000" />
-      <workItem from="1574859682548" duration="8887000" />
+      <workItem from="1574859682548" duration="9109000" />
+      <workItem from="1574925840013" duration="5160000" />
+      <workItem from="1574933385744" duration="2885000" />
+      <workItem from="1575197682259" duration="6674000" />
     </task>
     <task id="LOCAL-00001" summary="Ride module/test/gui">
       <created>1574068497772</created>
