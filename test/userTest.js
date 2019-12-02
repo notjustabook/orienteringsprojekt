@@ -30,7 +30,9 @@ describe('User Test', function() {
         passwordMatches.should.be.true();
     });
 
+    /*
     after('Close DB connection', async function() {
         await mongoose.disconnect();
     })
+    */
 });

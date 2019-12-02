@@ -16,7 +16,7 @@ exports.createRegistration = async function(numberOfPassengers, rideId, passenge
 exports.deleteRegistration = async function(username,rideId){
     const ride = await Ride.findOne({rideId});
     const registration = await Registration.findOne({username});
-    ride.numberOfSeats += registration.numberOfPassengers;
+    ride.numberOfSeats += registration.noOfPassengers;
     await Registration.deleteOne(registration);
 };
 

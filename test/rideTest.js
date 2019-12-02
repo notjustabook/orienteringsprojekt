@@ -21,7 +21,7 @@ describe('Ride test', function() {
         
     });
     it('Checks pickUpPoint attribute', function(){
-        assert(ride.pickUpPoint === 'pickUpPointTest');
+        assert(ride.pickUpPoint === 'test');
     });
 
     it('Checks driver attribute', function(){
