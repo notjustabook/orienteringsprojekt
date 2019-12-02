@@ -1,0 +1,70 @@
+body{background: gainsboro}
+
+table, th, td{border:solid white thin; padding: 10px; }
+
+th{font-size: 28px; height:100px;}
+
+td{color:#FFF; font-size: 20px; letter-spacing: 2px; width: 200px;}
+
+.eventRide, .showRides{
+    width: 47%;
+    border: solid black thin;
+    height:400px; overflow:auto;
+    display:inline-block;
+    padding: 10px;
+    margin: 5px 10px 5px 11px;
+    background: gray;
+}
+
+#requirements, #optionals {
+    width: 47%;
+    border: solid black thin;
+    height:220px; overflow:auto;
+    display:inline-block;
+    padding: 5px 10px 0px 10px;
+    margin: 5px 10px 5px 11px;
+    background: gray;
+}
+
+#createRideDiv{
+    font-size: 16px;
+    border: solid black thin;
+    background: darkgray;
+    margin-top: 5px;
+}
+
+#joinRideDiv{
+    padding:5px 5px 5px 0px;
+    background: darkgray;
+    margin-top: 10px;
+    border: solid black thin;
+}
+#createRideDiv p {
+    padding: 10px 0px 0px 0px;
+    margin:2px;
+    text-decoration: underline;
+}
+
+#createRideBtn, #deleteRideBtn {
+    padding: 5px 5px 5px 5px;
+    margin-top: 15px;
+}
+
+
+.toggled {
+background-color: white;
+    color:black;
+}
+
+.untoggled{
+    color:black;
+    background-color: gray;
+}
+
+.eventRide:last-child {
+    display:none;
+}
+
+.switchTable {
+    display:none;
+}

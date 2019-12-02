@@ -26,6 +26,6 @@ describe('Event test', function () {
         assert(event.date.getMonth() === 0);
     });
     it('Test event date', function () {
-        assert(event.date.getDate() === 1);
+        assert(event.date.getDate() === 24);
     })
 });
