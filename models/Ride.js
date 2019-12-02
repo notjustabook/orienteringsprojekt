@@ -5,6 +5,7 @@ const ride = new Schema({
     driver: String,
     pickUpPoint: String,
     numberOfSeats: Number,
+    event: String,
     count: 0
 });
 

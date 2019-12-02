@@ -50,11 +50,12 @@ exports.login = async function(username,password) {
     return await user.comparePasswords(password);
 };
 
-exports.createRide = function(userName, pickUpPoint, numberOfPassengers) {
+exports.createRide = function(userName, pickUpPoint, numberOfSeats, event) {
     const ride = new Ride({
         driver: userName,
         pickUpPoint: pickUpPoint,
-        numberOfSeats: numberOfPassengers,
+        numberOfSeats: numberOfSeats,
+        event: event,
         count: 0
     });
     ride.save();
@@ -66,5 +67,5 @@ exports.getRide = async function(pickUpPoint) {
 };
 
 exports.getRides = function() {
-    return Ride.find().exec;
+    return Ride.find().exec();
 };

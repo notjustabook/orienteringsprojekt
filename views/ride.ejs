@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Rides</title>
+<link rel="stylesheet" type="text/css" href="/css/ride.css">
+<script src="ride.js" defer></script>
+
+</head>
+<body>
+    <div id="createRideDiv">
+        <div id="requirements">
+            <p>Pick up point</p>
+            <input type="text" id="pickUpPoint" >
+            <p>Event</p>
+            <input type="text" id="event" value="Click on an event" disabled = true>
+            <p>Number of seats available</p>
+            <input type="text" id="numberOfPassengers" >
+            <br>
+            <button id="createRideBtn" onclick="createRide()" disabled = true>Create ride!</button>
+            <button id="deleteRideBtn" onclick="deleteRide()" disabled = true>Delete ride!</button>
+        </div>
+        <div id="optionals">
+            <p>Pickup time</p>
+            <input type="text" id="pickupTime" >
+            <p>Starting point at the event</p>
+            <input type="text" id="startingPoint">
+            <p>Other important info</p>
+            <input type="text" id="otherInfo" >
+            <br>
+
+        </div>
+    </div>
+
+    <div id="joinRideDiv">
+        <button id="rideDetails" onclick="switchTable()">Press for ride details</button><br>
+        <div class="eventRide">
+            <table>
+                <thead>
+                <th>Event name</th>
+                <th>Location</th>
+                <th>Date of event</th>
+                </thead>
+                    <%let count = 0%>
+                    <tbody>
+                <% events.forEach(function(item) { %>
+                    <tr>
+                        <td class="untoggled" onclick="getEventName('<%=item.eventName%>', this); updateRides('<%=item.eventName%>', '<%=JSON.stringify(rides)%>', '<%=rides[0].pickUpPoint%>')"><%=item.eventName%></td>
+                        <td> <%=item.location%> </td>
+                        <td> <%=dates[count]%> </td>
+                        <% count++ %>
+                <% }); %>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+        <div class="eventRide">
+            <table>
+                <thead>
+                <th>Driver</th>
+                <th>Pick up point</th>
+                <th>Number of seats available</th>
+                </thead>
+                <tbody id="rideTableBody">
+                <% rides.forEach(function(item) { %>
+                    <tr>
+                        <td class="untoggled"><%=item.driver%></td>
+                        <td><%=item.pickUpPoint%></td>
+                        <td><%=item.numberOfSeats%></td>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+
+            <table class="switchTable">
+                <thead>
+                <th>Pickup time</th>
+                <th>Startint point at the event</th>
+                <th>Other important info</th>
+                </thead>
+                <tbody>
+                <% rides.forEach(function(item) { %>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -11,8 +11,10 @@
   "dependencies": {
     "assert": "^2.0.0",
     "bcrypt": "^3.0.7",
+    "ejs": "^2.7.4",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "jquery": "^3.4.1",
     "mocha": "^6.2.2",
     "moment": "^2.24.0",
     "mongoose": "^5.7.11",

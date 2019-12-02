@@ -5,11 +5,16 @@ const controller = require('../controllers/controller');
 
 //Describes test
 describe('Ride test', function() {
-    const ride = controller.createRide('driverTest', 'test', 5);
+
+    const ride = controller.createRide('driverTest', 'pickUpPointTest', 5, 'eventTest');
 
     //Creates test
+    it('Checks event attribute', function(){
+        assert(ride.event === 'eventTest');
+    });
+
     it('Checks pickUpPoint attribute', function(){
-        assert(ride.pickUpPoint === 'test');
+        assert(ride.pickUpPoint === 'pickUpPointTest');
     });
 
     it('Checks driver attribute', function(){
@@ -27,7 +32,7 @@ describe('Ride test', function() {
 
     it('Finds a record from the database', async function() {
         this.timeout(5000);
-        let record = await controller.getRide('test');
-        assert(record.pickUpPoint === 'test');
+        let record = await controller.getRide('pickUpPointTest');
+        assert(record.pickUpPoint === 'pickUpPointTest');
     });
 });
