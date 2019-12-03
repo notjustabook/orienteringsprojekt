@@ -30,7 +30,9 @@ describe('Delete registration', function() {
         const reg = await Registration.findOne({rideId:123,passenger:'testPassengerUsername'});
         assert(reg === null);
     });
+    /*
     after('Close DB connection', async function() {
         await mongoose.disconnect();
     })
+    */
 });

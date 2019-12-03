@@ -29,8 +29,9 @@ describe('Login test', function() {
         const login = await controller.login('usernameTest','123');
         assert(login.message === 'Incorrect password');
     });
-
+    /*
     after('Close DB connection', async function() {
         await mongoose.disconnect();
     })
+    */
 });

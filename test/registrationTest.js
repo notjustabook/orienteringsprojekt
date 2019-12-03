@@ -20,12 +20,13 @@ let ride = null;
 describe('Registration Test', function() {
 
    before(async function() {
-      console.log("Clearing the database!");
+      
       //Clear database before testing!
       await userReq.deleteMany({});
       await eventReq.deleteMany({});
       await rideReq.deleteMany({});
       await registrationReq.deleteMany({});
+      console.log("DataBase Cleared!");
     
    //Create user(passanger) and save to database
    passenger = await userController.createUser('John Nielsen', 'JN1944', 'John1234');
@@ -38,10 +39,11 @@ describe('Registration Test', function() {
   
    //Creating a ride
    ride = await rideController.createRide(driver.username, 'pick up here!', 5, event.eventName);
-   console.log(ride)
+   
 
    console.log("Creating Registration")
    registration = await registrationController.createRegistration(5, ride.id, passenger.username);
+   // mangler stadig ID fra Ride af.
    console.log(registration);
 
    });
@@ -57,6 +59,12 @@ describe('Registration Test', function() {
    it('Passenger test', function() {
      registration.passenger.should.be.a.String();
    });
+   
+   /*
+    after('Close DB connection', async function() {
+        await mongoose.disconnect();
+    })
+    */
      
 });
   

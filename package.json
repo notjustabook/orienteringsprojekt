@@ -1,7 +1,6 @@
 {
   "name": "orienteringsprojekt",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "mocha"
@@ -26,5 +25,17 @@
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "mongoose": "^5.7.11"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notjustabook/orienteringsprojekt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/notjustabook/orienteringsprojekt/issues"
+  },
+  "homepage": "https://github.com/notjustabook/orienteringsprojekt#readme",
+  "description": ""
 }

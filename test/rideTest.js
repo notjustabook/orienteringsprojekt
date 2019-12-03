@@ -1,7 +1,8 @@
 const mocha = require('mocha');
 const assert = require('assert');
-const controller = require('../controllers/rideController');
-const mongoose = require('./connection');
+const rideController = require('../controllers/rideController');
+const eventController = require('../controllers/eventController');
+let mongoose = require('./connection');
 
 //Describes test
 describe('Ride test', function() {
@@ -19,7 +20,7 @@ describe('Ride test', function() {
         
     });
     it('Checks pickUpPoint attribute', function(){
-        assert(ride.pickUpPoint === 'pickUpPointTest');
+        assert(ride.pickUpPoint === 'test');
     });
 
     it('Checks driver attribute', function(){
@@ -49,9 +50,11 @@ describe('Ride test', function() {
         assert(record === null);
     });
 
+    /*
     after('Close DB connection', async function() {
         await mongoose.disconnect();
     })
+    */
 });
 
 
