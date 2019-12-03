@@ -14,7 +14,7 @@ let registration = null;
 let passenger = null;
 let driver = null;
 let ride = null;
-
+let event = null;
 
 // this test requires a user and a user with a ride.
 describe('Registration Test', function() {
@@ -29,21 +29,17 @@ describe('Registration Test', function() {
     
    //Create user(passanger) and save to database
    passenger = await userController.createUser('John Nielsen', 'JN1944', 'John1234');
-  
    //create user(driver) and save to DB, then Create a ride associated with this user.
-   driver = await userController.createUser('Ride Holdenson','xRHx' , 'xxxxxx');
- 
+
    // create an event to hold a ride.
    event = await eventController.createEvent('E1', 'Here!', new Date());
-  
    //Creating a ride
    ride = await rideController.createRide(driver.username, 'pick up here!', 5, event.eventName);
-   console.log(ride)
+   console.log(ride);
 
-   console.log("Creating Registration")
+   console.log("Creating Registration");
    registration = await registrationController.createRegistration(5, ride.id, passenger.username);
    console.log(registration);
-
    });
 
    it('Number of Passengers test',  function() {
@@ -57,7 +53,12 @@ describe('Registration Test', function() {
    it('Passenger test', function() {
      registration.passenger.should.be.a.String();
    });
-     
+   it('Tests if registration gets deleted', async function () {
+      this.timeout(5000);
+      await registrationController.deleteRegistration('JN1944',ride.id);
+      const reg = await registrationController.getRegistration('testPassengerUsername',ride.rideId);
+      assert(reg === null);
+   });
 });
   
 
