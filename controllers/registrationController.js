@@ -7,7 +7,7 @@ const Ride = require(path + 'Ride');
 exports.createRegistration = async function(numberOfPassengers, rideId, passengerUsername){
     let registration = new Registration({
         noOfPassengers: numberOfPassengers,
-        ride: rideId,
+        rideId: rideId,
         passenger: passengerUsername,
     });
     return registration.save();
@@ -24,6 +24,6 @@ exports.getRegistrations = function(){
     return Registration.find().exec;
 };
 
-exports.getRegistration = function(){
-    return registration.findOne({ride: ride}).exec;
+exports.getRegistration = function(rideId){
+    return registration.findOne({rideId: rideId}).exec;
 };
