@@ -1,4 +1,6 @@
 const should = require('should');
+const mocha = require('mocha');
+const assert = require('assert');
 const path = '../models';
 const userReq = require(path + '/User');
 const eventReq = require(path + '/Event');
@@ -31,18 +33,20 @@ describe('Registration Test', function() {
    //Create user(passanger) and save to database
    passenger = await userController.createUser('John Nielsen', 'JN1944', 'John1234');
    //create user(driver) and save to DB, then Create a ride associated with this user.
-
+   driver = await userController.createUser('Niels Sørensen','NS1234','niels123');
    // create an event to hold a ride.
    event = await eventController.createEvent('E1', 'Here!', new Date());
    //Creating a ride
    ride = await rideController.createRide(driver.username, 'pick up here!', 5, event.eventName);
-   console.log(ride);
+
 
 
    console.log("Creating Registration");
-   registration = await registrationController.createRegistration(5, ride.id, passenger.username);
+   registration = await registrationController.createRegistration(5, ride._id, passenger.username);
+
    // mangler stadig ID fra Ride af.
-   console.log(registration);
+      console.log(ride);
+   console.log('reg: '+registration);
    });
 
    it('Number of Passengers test',  function() {
@@ -50,7 +54,7 @@ describe('Registration Test', function() {
    });
 
    it('Ride ID test', function() {
-     registration.ride.should.be.a.String();
+     registration.rideId.should.be.a.String();
    });
 
    it('Passenger test', function() {
@@ -58,8 +62,8 @@ describe('Registration Test', function() {
    });
    it('Tests if registration gets deleted', async function () {
       this.timeout(5000);
-      await registrationController.deleteRegistration('JN1944',ride.id);
-      const reg = await registrationController.getRegistration('testPassengerUsername',ride.rideId);
+      await registrationController.deleteRegistration('JN1944',ride._id);
+      const reg = await registrationController.getRegistration('testPassengerUsername',ride._id);
       assert(reg === null);
    });
 

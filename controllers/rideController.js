@@ -17,14 +17,13 @@ exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
     // here we save a reference to the ride on a given event object.
     // this is not part of Rides tests yet.
 
-    const event = await eventController.getEvent(eName);
     await event.rides.push(ride.id);
     await event.save();
     return ride.save();
 };
 
 exports.getRide = async function(id) {
-    return Ride.findOne({id: id}).exec();
+    return Ride.findOne({_id: id}).exec();
 };
 
 exports.updateRideComment = async function(ride ,newString){
