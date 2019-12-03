@@ -2,6 +2,7 @@
 
 let path = '../models/';
 let Ride = require(path + 'Ride');
+let Registration = require(path + 'Registration');
 const eventController = require('./eventController');
 const userController = require('./userController');
 const registrationController = require('./registrationController');
@@ -15,6 +16,8 @@ exports.createRide = async function(userName, pPoint, numberOfSeats, eName) {
     const event = await eventController.getEvent(eName);
     // here we save a reference to the ride on a given event object.
     // this is not part of Rides tests yet.
+
+    const event = await eventController.getEvent(eName);
     await event.rides.push(ride.id);
     await event.save();
     return ride.save();
@@ -25,13 +28,13 @@ exports.getRide = async function(id) {
 };
 
 exports.updateRideComment = async function(ride ,newString){
-    foundRide = ride.UpdateOne({pickUpPoint: ride.pickUpPoint}).exec();
+    let foundRide = Ride.updateOne({pickUpPoint: ride.pickUpPoint}).exec();
     foundRide.comment = newString;
 
-}
+};
 
 exports.getRides = function() {
-    return Ride.find().exec;
+    return Ride.find().exec();
 };
 
 exports.deleteRide = async function(id) {

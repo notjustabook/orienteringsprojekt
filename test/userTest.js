@@ -15,8 +15,8 @@ describe('User Test', function() {
     it('Create user', async function() {
         //Create user and save to database
         let name = 'Niels John';
-        let userName = 'NJ2020';
-        let password = 'niels1234';
+        let userName = '1';
+        let password = '2';
         await controller.createUser(name, userName, password);
 
         //Get user from database
@@ -30,7 +30,9 @@ describe('User Test', function() {
         passwordMatches.should.be.true();
     });
 
+    /*
     after('Close DB connection', async function() {
         await mongoose.disconnect();
     })
+    */
 });

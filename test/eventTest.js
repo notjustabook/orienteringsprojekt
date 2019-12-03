@@ -10,7 +10,8 @@ describe('Event test', function () {
     let event = null;
 
     before(async function() {
-        event = await controller.createEvent('eventName-test' , 'location-test', moment('2012-01-01'));
+        testDate =  new date();
+        event = await controller.createEvent('eventName-test' , 'location-test', testDate);
     });
 
     it('Test event name', function () {
@@ -25,7 +26,14 @@ describe('Event test', function () {
     it('Test event date', function () {
         assert(event.date.getMonth() === 0);
     });
+
     it('Test event date', function () {
-        assert(event.date.getDate() === 1);
-    })
+        console.log(event.date);
+        assert(event.date === testDate);
+    });
+    /*
+    after('Close DB connection', async function() {
+        await mongoose.disconnect();
+    });
+    */
 });

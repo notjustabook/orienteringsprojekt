@@ -33,3 +33,7 @@ exports.getRegistration = async function(username,rideId){
     }
     return registration;
 };
+
+exports.getRegistration = function(){
+    return registration.findOne({ride: ride}).exec;
+};

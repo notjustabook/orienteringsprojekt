@@ -34,7 +34,9 @@ describe('Delete registration', function() {
         console.log(reg);
         assert(reg === null);
     });
+    /*
     after('Close DB connection', async function() {
         await mongoose.disconnect();
     })
+    */
 });
