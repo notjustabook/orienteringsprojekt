@@ -17,7 +17,7 @@ const loginRoute = require('./routes/loginRoute');
 
 app.use('/createUser', userRoute);
 app.use('/ride', rideRoute);
-app.use('/event', eventRoute);
+app.use('/createEvent', eventRoute);
 app.use('/index', loginRoute);
 
 app.listen(10000);
