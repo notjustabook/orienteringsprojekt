@@ -16,7 +16,7 @@ describe('Ride test', function() {
 
     //Creates test
     it('Checks id attribute', function(){
-        assert(ride.id !== null);
+        assert(ride._id !== null);
         
     });
     it('Checks pickUpPoint attribute', function(){
@@ -36,17 +36,17 @@ describe('Ride test', function() {
         assert(ride.isNew === false);
     });
 
-    // denne test skal efterses!!!!
-    // TODO
     it('Finds a record from the database', async function() {
         this.timeout(5000);
-        let record = await rideController.getRide(ride.id);
-        assert(record.id === ride.id);
+        let record = await rideController.getRide(ride._id);
+        console.log(record);
+        console.log(ride);
+        assert(record === ride);
     });
 
     it('Deletes a record from the database', async function() {
-        await rideController.deleteRide(ride.id);
-        let record = await rideController.getRide(ride.id);
+        await rideController.deleteRide(ride._id);
+        let record = await rideController.getRide(ride._id);
         assert(record === null);
     });
 
