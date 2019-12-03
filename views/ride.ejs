@@ -45,7 +45,7 @@
                     <tbody>
                 <% events.forEach(function(item) { %>
                     <tr>
-                        <td class="untoggled" onclick="getEventName('<%=item.eventName%>', this); updateRides('<%=item.eventName%>', '<%=JSON.stringify(rides)%>', '<%=rides[0].pickUpPoint%>')"><%=item.eventName%></td>
+                        <td class="untoggled" onclick="getEventName('<%=item.eventName%>', this); updateRides('<%=item.eventName%>', '<%=JSON.stringify(rides)%>')"><%=item.eventName%></td>
                         <td> <%=item.location%> </td>
                         <td> <%=dates[count]%> </td>
                         <% count++ %>

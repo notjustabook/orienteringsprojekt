@@ -9,7 +9,6 @@ describe('Ride test', function() {
     this.timeout(5000);
 
     let ride = null;
-
     before(async function() {
         event = await eventController.createEvent("RideTest Event", 'RideTest Location', new Date());
         ride = await rideController.createRide('driverTest', 'test', 5, event.eventName);

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/controllers/registrationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/registrationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/eventTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/eventTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/registrationTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/registrationTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/rideTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/rideTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/rideController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/rideController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/rideRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rideRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/connection.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +27,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/loginTest.js" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -69,9 +69,53 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="test\loginTest.js" type="mocha-javascript-test-runner" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/test/loginTest.js</test-file>
+      <method v="2" />
+    </configuration>
+    <configuration name="test\registrationtest.js" type="mocha-javascript-test-runner" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/test/registrationtest.js</test-file>
+      <method v="2" />
+    </configuration>
+    <configuration name="user test" type="mocha-javascript-test-runner" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/test</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/test/userTest.js</test-file>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Mocha.test\loginTest.js" />
+      <item itemvalue="Mocha.test\registrationtest.js" />
+      <item itemvalue="Mocha.Ride test.Checks pickUpPoint attribute" />
+      <item itemvalue="Mocha.user test" />
+      <item itemvalue="Node.js.app.js" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.app.js" />
+        <item itemvalue="Mocha.user test" />
         <item itemvalue="Mocha.Ride test.Checks pickUpPoint attribute" />
       </list>
     </recent_temporary>
@@ -86,9 +130,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574067111834</updated>
+<<<<<<< HEAD
       <workItem from="1574067113089" duration="29703000" />
       <workItem from="1574765842118" duration="985000" />
       <workItem from="1575313121748" duration="45000" />
+=======
+      <workItem from="1574067113089" duration="1231000" />
+      <workItem from="1574789482705" duration="5665000" />
+      <workItem from="1574838953695" duration="12201000" />
+      <workItem from="1574859682548" duration="8887000" />
+>>>>>>> 5f2c183010bbd3b84760163b9237d39533b93cce
     </task>
     <task id="LOCAL-00001" summary="Ride module/test/gui">
       <created>1574068497772</created>

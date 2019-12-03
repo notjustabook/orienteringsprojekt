@@ -24,8 +24,8 @@ exports.login = async function(username, password) {
 
     if(user === null)
         return {status: false, message: 'Incorrect username'};
-    let compare = await user.comparePasswords(password);
 
+    let compare = await user.comparePasswords(password);
     if(!compare)
         return {status: false, message: 'Incorrect password'};
 
