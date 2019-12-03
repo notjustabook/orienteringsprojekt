@@ -18,6 +18,7 @@ async function POST(url, data) {
 index.onclick = async () => {
     try {
         const response = await POST("/index", {username: username.value, password: password.value});
+        console.log(response.ok);
         if (response.ok === true) {
             window.location.href = "/ride";
         }

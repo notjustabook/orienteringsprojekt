@@ -2,6 +2,7 @@
 
 const path = '../models/';
 const Registration = require(path + 'Registration');
+const rideController = require('./rideController');
 const Ride = require(path + 'Ride');
 
 exports.createRegistration = async function(numberOfPassengers, rideId, passengerUsername){
@@ -14,16 +15,22 @@ exports.createRegistration = async function(numberOfPassengers, rideId, passenge
 };
 
 exports.deleteRegistration = async function(username,rideId){
-    const ride = await Ride.findOne({rideId});
-    const registration = await Registration.findOne({username});
+    const ride = await rideController.getRide(rideId);
+    const registration = await this.getRegistration(username,rideId);
     ride.numberOfSeats += registration.noOfPassengers;
     await Registration.deleteOne(registration);
 };
 
 exports.getRegistrations = function(){
-    return Registration.find().exec;
+    return Registration.find();
 };
 
-exports.getRegistration = function(rideId){
-    return registration.findOne({rideId: rideId}).exec;
+exports.getRegistration = async function(username,rideId){
+    let registration = null;
+    for(let e of await this.getRegistrations()){
+        if(e.passenger === username && e.rideId.localeCompare(rideId) ===0){
+            registration = e;
+        }
+    }
+    return registration;
 };
