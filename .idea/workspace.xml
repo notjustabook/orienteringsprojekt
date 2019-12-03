@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="897daabe-c1dc-4851-9d11-79c5062e7210" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/registrationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/registrationController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/eventTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/eventTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/registrationTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/registrationTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/rideTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/rideTest.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,6 +88,7 @@
       <updated>1574067111834</updated>
       <workItem from="1574067113089" duration="29703000" />
       <workItem from="1574765842118" duration="985000" />
+      <workItem from="1575313121748" duration="45000" />
     </task>
     <task id="LOCAL-00001" summary="Ride module/test/gui">
       <created>1574068497772</created>

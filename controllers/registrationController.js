@@ -23,3 +23,7 @@ exports.deleteRegistration = async function(username,rideId){
 exports.getRegistrations = function(){
     return Registration.find().exec;
 };
+
+exports.getRegistration = function(){
+    return registration.findOne({ride: ride}).exec;
+};
