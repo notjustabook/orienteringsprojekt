@@ -12,12 +12,13 @@ let mongoose = require('./connection');
 //Describes test
 describe('Delete registration', function() {
     let registration = null;
-    before(async function() {
+    let ride = null;
+        before(async function() {
         await eventController.createEvent('testEvent','testLocation',moment('2012-01-01'));
         await userController.createUser('testName','testUsername','testPassword');
         await userController.createUser('testPassenger','testPassengerUsername','testPassengerPassword');
-        await rideController.createRide('testUsername','westOfTest',4,'testEvent',123);
-        registration = await registrationController.createRegistration(2,123,'testPassengerUsername');
+        ride = await rideController.createRide('testUsername','westOfTest',4,'testEvent');
+        registration = await registrationController.createRegistration(2,ride.rideId,'testPassengerUsername');
     });
     it('Tests if registration exists', async function () {
         this.timeout(5000);
@@ -26,8 +27,11 @@ describe('Delete registration', function() {
 
     it('Tests if registration gets deleted', async function () {
         this.timeout(5000);
-        await registrationController.deleteRegistration('testPassengerUsername',123);
-        const reg = await Registration.findOne({rideId:123,passenger:'testPassengerUsername'});
+        let reg = await registrationController.getRegistration('testPassengerUsername',ride.rideId);
+        console.log(reg);
+        await registrationController.deleteRegistration('testPassengerUsername',);
+        reg = await registrationController.getRegistration('testPassengerUsername',ride.rideId);
+        console.log(reg);
         assert(reg === null);
     });
     /*

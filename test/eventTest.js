@@ -8,9 +8,9 @@ let mongoose = require('./connection');
 describe('Event test', function () {
 
     let event = null;
+    let testDate = new Date("January 31 1980 12:30");
 
     before(async function() {
-        testDate =  new date();
         event = await controller.createEvent('eventName-test' , 'location-test', testDate);
     });
 
@@ -20,15 +20,8 @@ describe('Event test', function () {
     it('Test event location', function () {
         assert(event.location === 'location-test');
     });
-    it('Test event date', function () {
-        assert(event.date.getFullYear() === 2012);
-    });
-    it('Test event date', function () {
-        assert(event.date.getMonth() === 0);
-    });
 
     it('Test event date', function () {
-        console.log(event.date);
         assert(event.date === testDate);
     });
     /*
