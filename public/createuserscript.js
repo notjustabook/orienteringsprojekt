@@ -86,7 +86,7 @@ function checkInput() {
         return false;
     }
     if (nameField.value.match(nameRegex) === null) {
-        successBox.innerHTML = 'Navn må kun indeholde bogstaver fra A-Å og mellemrum';
+        successBox.innerHTML = 'Navn må kun indeholde bogstaver fra A-Å og -';
         return false;
     }
     if (passwordField.value !== confirmPasswordField.value) {
